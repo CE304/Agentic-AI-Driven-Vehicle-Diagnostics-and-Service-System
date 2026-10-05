@@ -1,0 +1,20 @@
+[Unit]
+Description=Vehicle History MySQL Read-only API
+After=network-online.target mariadb.service mysql.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=iiit
+Group=iiit
+WorkingDirectory=/home/iiit/ve-diagnostics/mysql-history
+EnvironmentFile=/home/iiit/ve-diagnostics/mysql-history/vehicle_history_api.env
+ExecStart=/home/iiit/ve-diagnostics/venv/bin/python /home/iiit/ve-diagnostics/mysql-history/vehicle_history_api.py
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
+
