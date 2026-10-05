@@ -1,0 +1,1605 @@
+NHTSA 公開技術通報最常出現 DTC：前 200 名搜尋入口
+
+此排名僅表示 DTC 在公開製造商技術通報資料中出現的文件數，不等於車輛故障率、零件損壞率或 2008 Civic 適用性。
+AI 不得用排名推定診斷結論。
+
+rank: 1
+dtc: P0300
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 884
+observed_manufacturer_count: 43
+example_nhtsa_document_ids: 10011156, 10011393, 10011688, 10011773, 10012410
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 2
+dtc: P0456
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 664
+observed_manufacturer_count: 29
+example_nhtsa_document_ids: 10011803, 10017717, 10018515, 10019351, 10019352
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 3
+dtc: P0301
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 527
+observed_manufacturer_count: 37
+example_nhtsa_document_ids: 10012513, 10012640, 10013716, 10015419, 10015427
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 4
+dtc: P0304
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 520
+observed_manufacturer_count: 37
+example_nhtsa_document_ids: 10011688, 10013716, 10016602, 10017903, 10018427
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 5
+dtc: P0302
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 461
+observed_manufacturer_count: 36
+example_nhtsa_document_ids: 10012640, 10013716, 10016602, 10017903, 10018427
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 6
+dtc: P0303
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 455
+observed_manufacturer_count: 37
+example_nhtsa_document_ids: 10013716, 10016602, 10017903, 10018427, 10018536
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 7
+dtc: P0420
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 351
+observed_manufacturer_count: 31
+example_nhtsa_document_ids: 10011129, 10011161, 10011763, 10012934, 10014032
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 8
+dtc: P0087
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 348
+observed_manufacturer_count: 32
+example_nhtsa_document_ids: 10012150, 10012594, 10019942, 10022462, 10022962
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 9
+dtc: P20EE
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 292
+observed_manufacturer_count: 13
+example_nhtsa_document_ids: 10057858, 10095618, 10112163, 10112734, 10113239
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 10
+dtc: P0299
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 288
+observed_manufacturer_count: 24
+example_nhtsa_document_ids: 10011181, 10012958, 10012974, 10017873, 10017875
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 11
+dtc: P0128
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 276
+observed_manufacturer_count: 31
+example_nhtsa_document_ids: 10014511, 10015690, 10016255, 10017155, 10018472
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 12
+dtc: P0335
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 275
+observed_manufacturer_count: 24
+example_nhtsa_document_ids: 10013524, 10014923, 10015002, 10015211, 10018362
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 13
+dtc: P0171
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 270
+observed_manufacturer_count: 38
+example_nhtsa_document_ids: 10011176, 10011595, 10011666, 10011692, 10011798
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 14
+dtc: P0306
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 261
+observed_manufacturer_count: 30
+example_nhtsa_document_ids: 10012410, 10012640, 10013716, 10015427, 10017903
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 15
+dtc: U0140
+system_family: Network／車載網路通訊
+nhtsa_unique_document_count: 240
+observed_manufacturer_count: 15
+example_nhtsa_document_ids: 10020963, 10021457, 10025668, 10026006, 10036550
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 16
+dtc: P0441
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 235
+observed_manufacturer_count: 22
+example_nhtsa_document_ids: 10011437, 10011452, 10011453, 10011581, 10011803
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 17
+dtc: U3000
+system_family: Network／車載網路通訊
+nhtsa_unique_document_count: 230
+observed_manufacturer_count: 16
+example_nhtsa_document_ids: 10058598, 10076693, 10076900, 10078984, 10084411
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 18
+dtc: P0305
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 215
+observed_manufacturer_count: 27
+example_nhtsa_document_ids: 10012640, 10013716, 10017869, 10017903, 10018297
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 19
+dtc: P0442
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 206
+observed_manufacturer_count: 25
+example_nhtsa_document_ids: 10011160, 10011803, 10013477, 10013489, 10014993
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 20
+dtc: P061B
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 199
+observed_manufacturer_count: 16
+example_nhtsa_document_ids: 10014325, 10018053, 10020147, 10022239, 10023864
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 21
+dtc: P219A
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 198
+observed_manufacturer_count: 20
+example_nhtsa_document_ids: 10053733, 10053766, 10074916, 10097802, 10099785
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 22
+dtc: P2610
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 196
+observed_manufacturer_count: 18
+example_nhtsa_document_ids: 10022955, 10023937, 10030647, 10054358, 10057865
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 23
+dtc: P0607
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 187
+observed_manufacturer_count: 18
+example_nhtsa_document_ids: 10011863, 10021261, 10021563, 10121873, 10125193
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 24
+dtc: P0133
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 186
+observed_manufacturer_count: 21
+example_nhtsa_document_ids: 10012114, 10012969, 10013670, 10013765, 10015624
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 25
+dtc: P0455
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 184
+observed_manufacturer_count: 33
+example_nhtsa_document_ids: 10011803, 10012193, 10012458, 10012597, 10012739
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 26
+dtc: P2002
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 170
+observed_manufacturer_count: 13
+example_nhtsa_document_ids: 10054123, 10054132, 10058201, 10074312, 10095618
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 27
+dtc: P0401
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 169
+observed_manufacturer_count: 19
+example_nhtsa_document_ids: 10013307, 10017003, 10017431, 10017875, 10018837
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 28
+dtc: P0430
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 169
+observed_manufacturer_count: 20
+example_nhtsa_document_ids: 10011161, 10012934, 10014203, 10015801, 10016583
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 29
+dtc: P0101
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 161
+observed_manufacturer_count: 22
+example_nhtsa_document_ids: 10016043, 10017236, 10017245, 10019425, 10020798
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 30
+dtc: P0172
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 152
+observed_manufacturer_count: 22
+example_nhtsa_document_ids: 10012114, 10013118, 10013212, 10014747, 10015280
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 31
+dtc: P0116
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 149
+observed_manufacturer_count: 22
+example_nhtsa_document_ids: 10013521, 10015780, 10018575, 10024094, 10024095
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 32
+dtc: P2463
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 143
+observed_manufacturer_count: 14
+example_nhtsa_document_ids: 10025681, 10045066, 10074312, 10089088, 10091205
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 33
+dtc: P0606
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 141
+observed_manufacturer_count: 30
+example_nhtsa_document_ids: 10011250, 10011863, 10012371, 10017230, 10018433
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 34
+dtc: P2097
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 136
+observed_manufacturer_count: 20
+example_nhtsa_document_ids: 10053648, 10057905, 10078741, 10080060, 10083858
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 35
+dtc: U0100
+system_family: Network／車載網路通訊
+nhtsa_unique_document_count: 136
+observed_manufacturer_count: 20
+example_nhtsa_document_ids: 10025402, 10025668, 10026006, 10030834, 10034433
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 36
+dtc: P0011
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 135
+observed_manufacturer_count: 25
+example_nhtsa_document_ids: 10021407, 10021963, 10024164, 10024203, 10024224
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 37
+dtc: U0402
+system_family: Network／車載網路通訊
+nhtsa_unique_document_count: 134
+observed_manufacturer_count: 8
+example_nhtsa_document_ids: 10057738, 10074916, 10074933, 10076533, 10076534
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 38
+dtc: P0174
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 125
+observed_manufacturer_count: 25
+example_nhtsa_document_ids: 10011176, 10011595, 10011692, 10011798, 10012513
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 39
+dtc: P2096
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 117
+observed_manufacturer_count: 19
+example_nhtsa_document_ids: 10053530, 10053532, 10053648, 10075261, 10080060
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 40
+dtc: P0234
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 115
+observed_manufacturer_count: 14
+example_nhtsa_document_ids: 10012718, 10024608, 10030730, 10036424, 10047781
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 41
+dtc: P1D73
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 115
+observed_manufacturer_count: 4
+example_nhtsa_document_ids: 10074916, 10080000, 10080001, 10080062, 10119631
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 42
+dtc: P20E8
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 114
+observed_manufacturer_count: 12
+example_nhtsa_document_ids: 10053263, 10054783, 10076305, 10095622, 10106112
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 43
+dtc: B22A9
+system_family: Body／車身系統
+nhtsa_unique_document_count: 108
+observed_manufacturer_count: 6
+example_nhtsa_document_ids: 10187117, 10187118, 10187122, 10194049, 10194051
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 44
+dtc: P0106
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 106
+observed_manufacturer_count: 17
+example_nhtsa_document_ids: 10020678, 10022241, 10023740, 10032431, 10032436
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 45
+dtc: P0191
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 106
+observed_manufacturer_count: 19
+example_nhtsa_document_ids: 10012111, 10017883, 10018937, 10020918, 10020946
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 46
+dtc: P2201
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 106
+observed_manufacturer_count: 10
+example_nhtsa_document_ids: 10053478, 10054350, 10056235, 10056236, 10056376
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 47
+dtc: U1424
+system_family: Network／車載網路通訊
+nhtsa_unique_document_count: 106
+observed_manufacturer_count: 5
+example_nhtsa_document_ids: 10074933, 10076533, 10080543, 10084060, 10118803
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 48
+dtc: P208B
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 105
+observed_manufacturer_count: 9
+example_nhtsa_document_ids: 10058227, 10097082, 10105981, 10116934, 10117702
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 49
+dtc: P061A
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 99
+observed_manufacturer_count: 8
+example_nhtsa_document_ids: 10052195, 10054705, 10054929, 10074916, 10121933
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 50
+dtc: P0016
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 98
+observed_manufacturer_count: 25
+example_nhtsa_document_ids: 10017825, 10019182, 10020691, 10021407, 10022931
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 51
+dtc: P050D
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 97
+observed_manufacturer_count: 18
+example_nhtsa_document_ids: 10023640, 10074916, 10076533, 10078775, 10084053
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 52
+dtc: P1451
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 97
+observed_manufacturer_count: 4
+example_nhtsa_document_ids: 10109131, 10128924, 10136462, 10139637, 10139778
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 53
+dtc: P0461
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 96
+observed_manufacturer_count: 22
+example_nhtsa_document_ids: 10017274, 10020891, 10020970, 10021249, 10021251
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 54
+dtc: P0733
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 96
+observed_manufacturer_count: 12
+example_nhtsa_document_ids: 10014089, 10015682, 10017899, 10052062, 10056191
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 55
+dtc: P2299
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 96
+observed_manufacturer_count: 10
+example_nhtsa_document_ids: 10076310, 10076531, 10076535, 10084055, 10084058
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 56
+dtc: P0340
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 95
+observed_manufacturer_count: 22
+example_nhtsa_document_ids: 10012226, 10015211, 10016845, 10017357, 10018362
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 57
+dtc: P06DD
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 95
+observed_manufacturer_count: 17
+example_nhtsa_document_ids: 10080702, 10095129, 10095639, 10095643, 10112004
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 58
+dtc: P1326
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 95
+observed_manufacturer_count: 3
+example_nhtsa_document_ids: 10021904, 10144240, 10147418, 10147423, 10152487
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 59
+dtc: P0731
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 94
+observed_manufacturer_count: 9
+example_nhtsa_document_ids: 10052062, 10075220, 10076539, 10084062, 10095306
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 60
+dtc: P1CEA
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 94
+observed_manufacturer_count: 8
+example_nhtsa_document_ids: 10044530, 10053528, 10138905, 10144832, 10148994
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 61
+dtc: P0506
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 91
+observed_manufacturer_count: 9
+example_nhtsa_document_ids: 10024828, 10045340, 10099878, 10113610, 10121691
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 62
+dtc: P0734
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 90
+observed_manufacturer_count: 11
+example_nhtsa_document_ids: 10052062, 10056191, 10075220, 10076538, 10080071
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 63
+dtc: P0741
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 89
+observed_manufacturer_count: 23
+example_nhtsa_document_ids: 10011216, 10011694, 10011810, 10012152, 10012212
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 64
+dtc: P218F
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 89
+observed_manufacturer_count: 5
+example_nhtsa_document_ids: 10075264, 10076305, 10090424, 10091268, 10095963
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 65
+dtc: P17F0
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 88
+observed_manufacturer_count: 2
+example_nhtsa_document_ids: 10091460, 10091528, 10109118, 10109119, 10109187
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 66
+dtc: P0073
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 87
+observed_manufacturer_count: 6
+example_nhtsa_document_ids: 10075284, 10095208, 10137006, 10137010, 10149766
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 67
+dtc: P0308
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 87
+observed_manufacturer_count: 25
+example_nhtsa_document_ids: 10011156, 10012513, 10012953, 10015419, 10016795
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 68
+dtc: P0316
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 87
+observed_manufacturer_count: 7
+example_nhtsa_document_ids: 10011156, 10012953, 10014266, 10016795, 10017869
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 69
+dtc: P2459
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 87
+observed_manufacturer_count: 8
+example_nhtsa_document_ids: 10091205, 10095623, 10115941, 10123220, 10123231
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 70
+dtc: U0101
+system_family: Network／車載網路通訊
+nhtsa_unique_document_count: 87
+observed_manufacturer_count: 17
+example_nhtsa_document_ids: 10019218, 10020894, 10024601, 10025402, 10025668
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 71
+dtc: P04DB
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 86
+observed_manufacturer_count: 9
+example_nhtsa_document_ids: 10095122, 10095144, 10109032, 10109038, 10115955
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 72
+dtc: P0017
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 85
+observed_manufacturer_count: 23
+example_nhtsa_document_ids: 10019180, 10019419, 10019427, 10019455, 10019456
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 73
+dtc: P0496
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 83
+observed_manufacturer_count: 9
+example_nhtsa_document_ids: 10023878, 10096676, 10096759, 10101325, 10114466
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 74
+dtc: P249C
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 83
+observed_manufacturer_count: 10
+example_nhtsa_document_ids: 10106309, 10116933, 10116959, 10117035, 10118801
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 75
+dtc: P2281
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 82
+observed_manufacturer_count: 2
+example_nhtsa_document_ids: 10076305, 10121722, 10136532, 10136902, 10138956
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 76
+dtc: U0415
+system_family: Network／車載網路通訊
+nhtsa_unique_document_count: 82
+observed_manufacturer_count: 13
+example_nhtsa_document_ids: 10053845, 10054499, 10057743, 10057863, 10083324
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 77
+dtc: P050B
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 80
+observed_manufacturer_count: 9
+example_nhtsa_document_ids: 10019371, 10019373, 10074916, 10105739, 10105749
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 78
+dtc: P0463
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 79
+observed_manufacturer_count: 15
+example_nhtsa_document_ids: 10016904, 10017536, 10017812, 10017863, 10017874
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 79
+dtc: P0776
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 79
+observed_manufacturer_count: 10
+example_nhtsa_document_ids: 10021843, 10022704, 10023771, 10030729, 10032391
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 80
+dtc: U0401
+system_family: Network／車載網路通訊
+nhtsa_unique_document_count: 78
+observed_manufacturer_count: 11
+example_nhtsa_document_ids: 10017820, 10057738, 10058194, 10074916, 10094621
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 81
+dtc: P1607
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 77
+observed_manufacturer_count: 5
+example_nhtsa_document_ids: 10025362, 10074916, 10076533, 10076535, 10084053
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 82
+dtc: P2172
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 77
+observed_manufacturer_count: 6
+example_nhtsa_document_ids: 10074916, 10084055, 10121721, 10138905, 10138930
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 83
+dtc: P0735
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 76
+observed_manufacturer_count: 10
+example_nhtsa_document_ids: 10052062, 10057860, 10075220, 10096568, 10105410
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 84
+dtc: P06EF
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 75
+observed_manufacturer_count: 7
+example_nhtsa_document_ids: 10139783, 10162529, 10162535, 10162562, 10168431
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 85
+dtc: P0729
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 75
+observed_manufacturer_count: 13
+example_nhtsa_document_ids: 10032522, 10052062, 10075220, 10096568, 10105410
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 86
+dtc: P17F1
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 75
+observed_manufacturer_count: 3
+example_nhtsa_document_ids: 10054511, 10091460, 10091528, 10109187, 10109202
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 87
+dtc: P207F
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 75
+observed_manufacturer_count: 10
+example_nhtsa_document_ids: 10053004, 10053263, 10053473, 10053478, 10057858
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 88
+dtc: U110E
+system_family: Network／車載網路通訊
+nhtsa_unique_document_count: 75
+observed_manufacturer_count: 3
+example_nhtsa_document_ids: 10076305, 10121722, 10129029, 10135114, 10138956
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 89
+dtc: P00C6
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 74
+observed_manufacturer_count: 15
+example_nhtsa_document_ids: 10055403, 10095945, 10096573, 10105424, 10111838
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 90
+dtc: P0604
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 74
+observed_manufacturer_count: 17
+example_nhtsa_document_ids: 10011863, 10017826, 10022797, 10032434, 10087221
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 91
+dtc: P0756
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 74
+observed_manufacturer_count: 17
+example_nhtsa_document_ids: 10012152, 10012729, 10014269, 10017611, 10019792
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 92
+dtc: U3017
+system_family: Network／車載網路通訊
+nhtsa_unique_document_count: 74
+observed_manufacturer_count: 4
+example_nhtsa_document_ids: 10119199, 10121722, 10123107, 10123145, 10129029
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 93
+dtc: P0AA1
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 73
+observed_manufacturer_count: 9
+example_nhtsa_document_ids: 10022479, 10137310, 10166590, 10168974, 10170685
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 94
+dtc: P0088
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 70
+observed_manufacturer_count: 15
+example_nhtsa_document_ids: 10019942, 10022962, 10027344, 10030784, 10081221
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 95
+dtc: P0201
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 70
+observed_manufacturer_count: 15
+example_nhtsa_document_ids: 10011735, 10020834, 10020835, 10021620, 10022657
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 96
+dtc: P0141
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 69
+observed_manufacturer_count: 16
+example_nhtsa_document_ids: 10017196, 10018077, 10018910, 10052769, 10058058
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 97
+dtc: P0480
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 69
+observed_manufacturer_count: 12
+example_nhtsa_document_ids: 10018986, 10032459, 10043844, 10074916, 10075731
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 98
+dtc: P0339
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 68
+observed_manufacturer_count: 8
+example_nhtsa_document_ids: 10084055, 10087906, 10107036, 10107123, 10107154
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 99
+dtc: P0732
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 68
+observed_manufacturer_count: 10
+example_nhtsa_document_ids: 10011157, 10021089, 10052062, 10075220, 10112391
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 100
+dtc: P1626
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 67
+observed_manufacturer_count: 2
+example_nhtsa_document_ids: 11012241, 11012243, 11012272, 11012273, 11012281
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 101
+dtc: P226C
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 67
+observed_manufacturer_count: 7
+example_nhtsa_document_ids: 10109126, 10116295, 10117568, 10118117, 10125467
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 102
+dtc: P24A5
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 67
+observed_manufacturer_count: 2
+example_nhtsa_document_ids: 10095143, 10136902, 10139637, 10139778, 10139839
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 103
+dtc: P0206
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 66
+observed_manufacturer_count: 12
+example_nhtsa_document_ids: 10020835, 10021620, 10082875, 10112007, 10112961
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 104
+dtc: P202E
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 66
+observed_manufacturer_count: 5
+example_nhtsa_document_ids: 10091268, 10117581, 10136532, 10136917, 10136967
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 105
+dtc: P204F
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 66
+observed_manufacturer_count: 5
+example_nhtsa_document_ids: 10053004, 10053473, 10058667, 10075264, 10091268
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 106
+dtc: P242F
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 66
+observed_manufacturer_count: 2
+example_nhtsa_document_ids: 10076305, 10121722, 10129029, 10135114, 10136532
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 107
+dtc: P0014
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 65
+observed_manufacturer_count: 18
+example_nhtsa_document_ids: 10019419, 10019427, 10019455, 10019456, 10024623
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 108
+dtc: P0751
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 64
+observed_manufacturer_count: 14
+example_nhtsa_document_ids: 10022704, 10023771, 10023942, 10032522, 10044125
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 109
+dtc: P0868
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 63
+observed_manufacturer_count: 5
+example_nhtsa_document_ids: 10138956, 10139942, 10140028, 10140163, 10141275
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 110
+dtc: P2101
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 63
+observed_manufacturer_count: 14
+example_nhtsa_document_ids: 10011212, 10017672, 10018910, 10023976, 10026669
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 111
+dtc: P2099
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 61
+observed_manufacturer_count: 15
+example_nhtsa_document_ids: 10080060, 10091127, 10111995, 10112960, 10121677
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 112
+dtc: P2704
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 60
+observed_manufacturer_count: 4
+example_nhtsa_document_ids: 10096568, 10101654, 10101722, 10102022, 10103561
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 113
+dtc: C1252
+system_family: Chassis／底盤系統
+nhtsa_unique_document_count: 59
+observed_manufacturer_count: 5
+example_nhtsa_document_ids: 10109482, 10132769, 10134398, 10134400, 10142504
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 114
+dtc: P0402
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 59
+observed_manufacturer_count: 12
+example_nhtsa_document_ids: 10013307, 10015857, 10015983, 10018837, 10022592
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 115
+dtc: P0841
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 59
+observed_manufacturer_count: 10
+example_nhtsa_document_ids: 10013708, 10022259, 10032431, 10089604, 10111091
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 116
+dtc: P0AA4
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 59
+observed_manufacturer_count: 7
+example_nhtsa_document_ids: 10091222, 10137310, 10148580, 10148902, 10150528
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 117
+dtc: P0711
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 58
+observed_manufacturer_count: 8
+example_nhtsa_document_ids: 10076538, 10090166, 10121787, 10121794, 10121931
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 118
+dtc: P0740
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 58
+observed_manufacturer_count: 15
+example_nhtsa_document_ids: 10013990, 10015802, 10016149, 10017611, 10026168
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 119
+dtc: P0766
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 58
+observed_manufacturer_count: 6
+example_nhtsa_document_ids: 10032522, 10067834, 10097745, 10097746, 10097968
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 120
+dtc: U0151
+system_family: Network／車載網路通訊
+nhtsa_unique_document_count: 58
+observed_manufacturer_count: 12
+example_nhtsa_document_ids: 10020963, 10030750, 10044239, 10086206, 10087901
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 121
+dtc: P013E
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 57
+observed_manufacturer_count: 8
+example_nhtsa_document_ids: 10080421, 10096822, 10097084, 10105881, 10107195
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 122
+dtc: P0513
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 57
+observed_manufacturer_count: 12
+example_nhtsa_document_ids: 10030169, 10076308, 10083280, 10111709, 10112303
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 123
+dtc: P0524
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 57
+observed_manufacturer_count: 9
+example_nhtsa_document_ids: 10023422, 10090817, 10091547, 10092061, 10092783
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 124
+dtc: P0761
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 57
+observed_manufacturer_count: 9
+example_nhtsa_document_ids: 10014269, 10052062, 10067834, 10097745, 10097746
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 125
+dtc: P0032
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 56
+observed_manufacturer_count: 9
+example_nhtsa_document_ids: 10128943, 10128980, 10135332, 10136476, 10136495
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 126
+dtc: P0757
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 56
+observed_manufacturer_count: 12
+example_nhtsa_document_ids: 10012152, 10013265, 10017023, 10018842, 10021012
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 127
+dtc: P026B
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 55
+observed_manufacturer_count: 3
+example_nhtsa_document_ids: 10076305, 10136960, 10136985, 10138979, 10139777
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 128
+dtc: P0341
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 55
+observed_manufacturer_count: 13
+example_nhtsa_document_ids: 10012367, 10015389, 10020234, 10021840, 10023937
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 129
+dtc: P0440
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 55
+observed_manufacturer_count: 12
+example_nhtsa_document_ids: 10013138, 10014993, 10020014, 10121715, 10121865
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 130
+dtc: P2080
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 55
+observed_manufacturer_count: 8
+example_nhtsa_document_ids: 10109115, 10116089, 10117636, 10117647, 10118687
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 131
+dtc: U0155
+system_family: Network／車載網路通訊
+nhtsa_unique_document_count: 55
+observed_manufacturer_count: 13
+example_nhtsa_document_ids: 10019826, 10020894, 10026702, 10094621, 10108615
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 132
+dtc: P0365
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 54
+observed_manufacturer_count: 13
+example_nhtsa_document_ids: 10089963, 10093944, 10116652, 10121814, 10125132
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 133
+dtc: P0780
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 54
+observed_manufacturer_count: 8
+example_nhtsa_document_ids: 10014124, 10014176, 10085422, 10091809, 10095556
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 134
+dtc: P1101
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 54
+observed_manufacturer_count: 4
+example_nhtsa_document_ids: 10032870, 10036404, 10052024, 10053929, 10078885
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 135
+dtc: P229F
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 54
+observed_manufacturer_count: 9
+example_nhtsa_document_ids: 10122810, 10128984, 10129029, 10135114, 10136480
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 136
+dtc: P0158
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 53
+observed_manufacturer_count: 13
+example_nhtsa_document_ids: 10032515, 10033733, 10054805, 10055124, 10080421
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 137
+dtc: P062B
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 53
+observed_manufacturer_count: 9
+example_nhtsa_document_ids: 10036490, 10057810, 10137006, 10137010, 10137161
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 138
+dtc: U0121
+system_family: Network／車載網路通訊
+nhtsa_unique_document_count: 53
+observed_manufacturer_count: 12
+example_nhtsa_document_ids: 10020124, 10020894, 10022691, 10025668, 10026006
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 139
+dtc: P0138
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 52
+observed_manufacturer_count: 15
+example_nhtsa_document_ids: 10016925, 10032515, 10033733, 10054805, 10055124
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 140
+dtc: P04F0
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 52
+observed_manufacturer_count: 3
+example_nhtsa_document_ids: 10125657, 10160819, 10160865, 10171390, 10172018
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 141
+dtc: P0507
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 52
+observed_manufacturer_count: 17
+example_nhtsa_document_ids: 10013373, 10013463, 10014876, 10014877, 10016538
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 142
+dtc: P2227
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 52
+observed_manufacturer_count: 6
+example_nhtsa_document_ids: 10076308, 10113763, 10129030, 10135115, 10135404
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 143
+dtc: P2703
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 52
+observed_manufacturer_count: 2
+example_nhtsa_document_ids: 10183420, 10184638, 10187829, 10189869, 10191169
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 144
+dtc: C0037
+system_family: Chassis／底盤系統
+nhtsa_unique_document_count: 51
+observed_manufacturer_count: 6
+example_nhtsa_document_ids: 10094606, 10095126, 10108995, 10140176, 10141265
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 145
+dtc: P0031
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 51
+observed_manufacturer_count: 13
+example_nhtsa_document_ids: 10015531, 10015534, 10015539, 10015540, 10015545
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 146
+dtc: P013A
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 51
+observed_manufacturer_count: 12
+example_nhtsa_document_ids: 10076912, 10080421, 10096822, 10097084, 10098021
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 147
+dtc: P0421
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 51
+observed_manufacturer_count: 7
+example_nhtsa_document_ids: 10013981, 10015715, 10093127, 10105502, 10116045
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 148
+dtc: P208E
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 51
+observed_manufacturer_count: 6
+example_nhtsa_document_ids: 10056198, 10075264, 10095963, 10126940, 10127567
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 149
+dtc: P2701
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 51
+observed_manufacturer_count: 3
+example_nhtsa_document_ids: 10109063, 10143096, 10183420, 10184638, 10189869
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 150
+dtc: P076F
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 50
+observed_manufacturer_count: 4
+example_nhtsa_document_ids: 10076538, 10137032, 10139887, 10139969, 10141218
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 151
+dtc: P106A
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 50
+observed_manufacturer_count: 6
+example_nhtsa_document_ids: 10084053, 10121715, 10121782, 10121865, 10121887
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 152
+dtc: P2453
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 50
+observed_manufacturer_count: 9
+example_nhtsa_document_ids: 10123111, 10123148, 10128924, 10128984, 10128992
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 153
+dtc: U0422
+system_family: Network／車載網路通訊
+nhtsa_unique_document_count: 50
+observed_manufacturer_count: 11
+example_nhtsa_document_ids: 10075284, 10113208, 10118801, 10123209, 10137205
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 154
+dtc: P0072
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 49
+observed_manufacturer_count: 7
+example_nhtsa_document_ids: 10143727, 10221359, 10222978, 10222979, 10224892
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 155
+dtc: P008A
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 49
+observed_manufacturer_count: 11
+example_nhtsa_document_ids: 10033329, 10034344, 10044939, 10105985, 10125260
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 156
+dtc: P0111
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 49
+observed_manufacturer_count: 13
+example_nhtsa_document_ids: 10024896, 10030448, 10034636, 10036908, 10047359
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 157
+dtc: P0126
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 49
+observed_manufacturer_count: 2
+example_nhtsa_document_ids: 10021566, 10051939, 10097370, 10097374, 10097379
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 158
+dtc: P0452
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 49
+observed_manufacturer_count: 13
+example_nhtsa_document_ids: 10011803, 10023746, 10030111, 10030888, 10032431
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 159
+dtc: P0521
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 49
+observed_manufacturer_count: 17
+example_nhtsa_document_ids: 10059068, 10083080, 10109014, 10113888, 10114456
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 160
+dtc: P242B
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 49
+observed_manufacturer_count: 8
+example_nhtsa_document_ids: 10133245, 10134776, 10137006, 10137010, 10139789
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 161
+dtc: C1001
+system_family: Chassis／底盤系統
+nhtsa_unique_document_count: 48
+observed_manufacturer_count: 5
+example_nhtsa_document_ids: 10076692, 10091002, 10091625, 10097062, 10105121
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 162
+dtc: P049D
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 48
+observed_manufacturer_count: 5
+example_nhtsa_document_ids: 10128924, 10129029, 10135114, 10136462, 10136532
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 163
+dtc: P0AA6
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 48
+observed_manufacturer_count: 12
+example_nhtsa_document_ids: 10018850, 10021710, 10053908, 10056197, 10112220
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 164
+dtc: P205E
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 48
+observed_manufacturer_count: 3
+example_nhtsa_document_ids: 10076305, 10091268, 10121722, 10129029, 10135114
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 165
+dtc: P2098
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 48
+observed_manufacturer_count: 12
+example_nhtsa_document_ids: 10080060, 10089976, 10091127, 10113400, 10121680
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 166
+dtc: P2138
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 48
+observed_manufacturer_count: 15
+example_nhtsa_document_ids: 10017087, 10017264, 10017358, 10017396, 10020136
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 167
+dtc: U0131
+system_family: Network／車載網路通訊
+nhtsa_unique_document_count: 48
+observed_manufacturer_count: 10
+example_nhtsa_document_ids: 10043936, 10080160, 10081007, 10101107, 10101263
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 168
+dtc: P060C
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 47
+observed_manufacturer_count: 12
+example_nhtsa_document_ids: 10052195, 10075213, 10075214, 10120343, 10185609
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 169
+dtc: P0736
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 47
+observed_manufacturer_count: 6
+example_nhtsa_document_ids: 10012516, 10016891, 10112401, 10125942, 10125963
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 170
+dtc: P0771
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 47
+observed_manufacturer_count: 4
+example_nhtsa_document_ids: 10014269, 10021461, 10067834, 10097745, 10097746
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 171
+dtc: P0A94
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 47
+observed_manufacturer_count: 4
+example_nhtsa_document_ids: 10020564, 10092981, 10096871, 10096872, 10096873
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 172
+dtc: P0CA6
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 47
+observed_manufacturer_count: 2
+example_nhtsa_document_ids: 10244410, 10248571, 11011924, 11011925, 11011926
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 173
+dtc: P2702
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 47
+observed_manufacturer_count: 4
+example_nhtsa_document_ids: 10096568, 10104521, 10105410, 10105601, 10105609
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 174
+dtc: C0051
+system_family: Chassis／底盤系統
+nhtsa_unique_document_count: 46
+observed_manufacturer_count: 9
+example_nhtsa_document_ids: 10097748, 10098856, 10106795, 10115759, 10117337
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 175
+dtc: P0307
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 46
+observed_manufacturer_count: 13
+example_nhtsa_document_ids: 10019912, 10020730, 10023215, 10030724, 10053469
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 176
+dtc: P040B
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 46
+observed_manufacturer_count: 9
+example_nhtsa_document_ids: 10078775, 10080083, 10090432, 10095239, 10096103
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 177
+dtc: P2195
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 46
+observed_manufacturer_count: 12
+example_nhtsa_document_ids: 10011176, 10012639, 10012969, 10014139, 10016795
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 178
+dtc: P219B
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 46
+observed_manufacturer_count: 16
+example_nhtsa_document_ids: 10053733, 10053766, 10097802, 10099785, 10110994
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 179
+dtc: U0418
+system_family: Network／車載網路通訊
+nhtsa_unique_document_count: 46
+observed_manufacturer_count: 8
+example_nhtsa_document_ids: 10121806, 10121810, 10162529, 10162535, 10169222
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 180
+dtc: B0020
+system_family: Body／車身系統
+nhtsa_unique_document_count: 45
+observed_manufacturer_count: 16
+example_nhtsa_document_ids: 10026687, 10029924, 10032752, 10079366, 10090448
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 181
+dtc: P0038
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 45
+observed_manufacturer_count: 12
+example_nhtsa_document_ids: 10080421, 10096822, 10097084, 10105881, 10128943
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 182
+dtc: P053F
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 45
+observed_manufacturer_count: 4
+example_nhtsa_document_ids: 10043929, 10116407, 10151908, 10151909, 10154688
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 183
+dtc: P0767
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 45
+observed_manufacturer_count: 3
+example_nhtsa_document_ids: 10097745, 10097746, 10097968, 10097970, 10098017
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 184
+dtc: P203F
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 45
+observed_manufacturer_count: 1
+example_nhtsa_document_ids: 10168471, 10174200, 10175120, 10175533, 10180257
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 185
+dtc: P2C90
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 45
+observed_manufacturer_count: 3
+example_nhtsa_document_ids: 10177533, 10177537, 10177542, 10181540, 10194047
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 186
+dtc: U11E9
+system_family: Network／車載網路通訊
+nhtsa_unique_document_count: 45
+observed_manufacturer_count: 4
+example_nhtsa_document_ids: 10121641, 10121684, 10139736, 10139935, 10142201
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 187
+dtc: U3033
+system_family: Network／車載網路通訊
+nhtsa_unique_document_count: 45
+observed_manufacturer_count: 4
+example_nhtsa_document_ids: 10183046, 10187044, 10215865, 10221297, 10223935
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 188
+dtc: P018B
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 44
+observed_manufacturer_count: 8
+example_nhtsa_document_ids: 10083180, 10099774, 10113986, 10114071, 10114076
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 189
+dtc: P07D9
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 44
+observed_manufacturer_count: 4
+example_nhtsa_document_ids: 10183420, 10184638, 10189869, 10191169, 10201632
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 190
+dtc: P07F7
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 44
+observed_manufacturer_count: 2
+example_nhtsa_document_ids: 10183420, 10184638, 10189869, 10191169, 10201632
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 191
+dtc: P1C54
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 44
+observed_manufacturer_count: 1
+example_nhtsa_document_ids: 10180252, 10183088, 10188801, 10188807, 10188824
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 192
+dtc: P20E9
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 44
+observed_manufacturer_count: 4
+example_nhtsa_document_ids: 10117685, 10118801, 10124488, 10137024, 10139634
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 193
+dtc: P2700
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 44
+observed_manufacturer_count: 3
+example_nhtsa_document_ids: 10044125, 10183420, 10183758, 10184638, 10189869
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 194
+dtc: U0001
+system_family: Network／車載網路通訊
+nhtsa_unique_document_count: 44
+observed_manufacturer_count: 10
+example_nhtsa_document_ids: 10076281, 10076502, 10101107, 10101263, 10101662
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 195
+dtc: B1560
+system_family: Body／車身系統
+nhtsa_unique_document_count: 43
+observed_manufacturer_count: 8
+example_nhtsa_document_ids: 10121785, 10121796, 10214572, 10214576, 10216325
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 196
+dtc: P0175
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 43
+observed_manufacturer_count: 14
+example_nhtsa_document_ids: 10013118, 10016514, 10016795, 10017860, 10018055
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 197
+dtc: P0563
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 43
+observed_manufacturer_count: 5
+example_nhtsa_document_ids: 10139916, 10144827, 10168460, 10194074, 10194075
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 198
+dtc: P1DCD
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 43
+observed_manufacturer_count: 4
+example_nhtsa_document_ids: 10080071, 10121790, 10121879, 10121889, 10138906
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 199
+dtc: P2084
+system_family: Powertrain／動力系統
+nhtsa_unique_document_count: 43
+observed_manufacturer_count: 6
+example_nhtsa_document_ids: 10053687, 10116089, 10117636, 10117647, 10133245
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---
+rank: 200
+dtc: B101D
+system_family: Body／車身系統
+nhtsa_unique_document_count: 42
+observed_manufacturer_count: 11
+example_nhtsa_document_ids: 10030788, 10032896, 10075734, 10111715, 10111901
+exact_definition: 請查正式 DTC 定義來源，不得由排名猜測
+---

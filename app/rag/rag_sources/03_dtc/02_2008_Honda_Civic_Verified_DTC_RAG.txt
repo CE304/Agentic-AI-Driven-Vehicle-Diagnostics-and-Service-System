@@ -1,0 +1,88 @@
+2008 Honda Civic DTC 已驗證與適用性隔離層
+
+固定目標車：2008 Honda Civic 一般版 1.8L。
+禁止自動套用：Civic Si、Civic Hybrid、Civic GX/CNG 的資料，除非 VIN、引擎／燃料型式或使用者明確確認。
+本檔的『已驗證』是指代碼與公開文件的關聯已核對，不代表看到 DTC 就能直接更換零件。
+
+[VEHICLE_DTC]
+dtc: P0456
+scope: 2007-2008 Honda Civic；公開摘要未限 Si/Hybrid/GX
+official_context: EVAP 極小洩漏相關技術通報
+nhtsa_document_id: 10024970
+diagnostic_rule: 先確認油箱蓋密封、EVAP 管路與實際洩漏測試；DTC 不等於指定零件已壞。
+cross_vehicle_observation: NHTSA 公開通報中共見於 664 份不重複文件、29 個製造商品牌；此數字不代表 Civic 故障率
+confidence: A－有 2008 Civic 對應的 NHTSA 公開製造商通報
+[/VEHICLE_DTC]
+
+[VEHICLE_DTC]
+dtc: 32-10
+module: SRS
+scope: 2006-2009 Honda Civic；須依 VIN／SRS 系統與原始通報確認
+official_context: 前乘客側氣囊充氣器電路開路；公開摘要指出可能與地板線束端子壓接不良相關
+nhtsa_document_id: 10033127
+diagnostic_rule: SRS 為安全系統；禁止只憑代碼量電阻、短接或更換氣囊，應按 Honda SRS 安全程序與原廠診斷流程。
+confidence: A－有 2008 Civic 對應的 NHTSA 公開製造商通報
+[/VEHICLE_DTC]
+
+[VEHICLE_DTC_GROUP]
+dtc: 81-63, 85-63, 81-79
+module: SRS
+scope: 2006-2008 Honda Civic；事件背景是更換 SRS 控制單元之後
+official_context: 公開摘要指向安裝錯誤零件／料號適用性問題的可能性
+nhtsa_document_id: 10026824
+diagnostic_rule: 先核對 VIN、SRS 單元料號、安裝紀錄與 HDS 完整 DTC；不得把這組碼套用到未更換 SRS 單元的車。
+confidence: A－有 2008 Civic 對應的 NHTSA 公開製造商通報
+[/VEHICLE_DTC_GROUP]
+
+[VARIANT_ONLY_DTC_GROUP]
+dtc: P0300, P0301, P0302, P0303, P0304
+scope: 2008 Civic CNG/GX 專屬公開案例，不可直接套用一般 1.8L 汽油版
+official_context: 粗怠速／MIL 與多缸或各缸失火碼
+nhtsa_document_id: 10108873
+diagnostic_rule: 一般 1.8L 若出現這些碼，只能使用通用失火診斷流程；不可引用 CNG/GX 的專屬成因當結論。
+cross_vehicle_observation_P0300: NHTSA 公開通報中共見於 884 份不重複文件、43 個製造商品牌；此數字不代表 Civic 故障率
+confidence: A－車型變體已隔離
+[/VARIANT_ONLY_DTC_GROUP]
+
+[VARIANT_ONLY_DTC]
+dtc: P0606
+scope: 2006-2008 Civic GX 專屬公開案例，不可直接套用一般 1.8L 汽油版
+official_context: 公開摘要將 ECM/PCM processor malfunction 與特定售後火星塞造成的電氣干擾列為該 GX 案例背景
+nhtsa_document_id: 10099946
+diagnostic_rule: 一般版看到 P0606 時先查電源、接地、充電電壓、干擾與 Honda 正式流程；不得直接判定 PCM 損壞。
+cross_vehicle_observation: NHTSA 公開通報中共見於 141 份不重複文件、30 個製造商品牌；此數字不代表 Civic 故障率
+confidence: A－車型變體已隔離
+[/VARIANT_ONLY_DTC]
+
+[VARIANT_MISMATCH_WARNING]
+dtc: 61-04, 32-09, 39-02
+module: EPS／相關底盤電子系統
+scope: NHTSA 資料列含 Civic，但公開摘要的適用車型文字指向 Civic Hybrid、Civic Si 或 Fit，與一般 1.8L 不一致
+nhtsa_document_ids: 10124264, 10124255
+answer_rule: 一般 1.8L 不得引用為已適用；必須取得 VIN、車型與 Honda 原始文件後再判斷。
+confidence: X－資料列與摘要適用性不一致，僅保留警示
+[/VARIANT_MISMATCH_WARNING]
+
+[WORKFLOW_KNOWN_CODE]
+dtc: P0171
+scope: 既有 RAG 測試案例，並非已找到的 2008 Civic 專屬 NHTSA 技術通報
+cross_vehicle_observation: NHTSA 公開通報中共見於 270 份不重複文件、38 個製造商品牌；此數字不代表 Civic 故障率
+answer_rule: 優先讀取既有 Honda_Civic_2008_P0171_RAG_測試資料與實車 PID；不得把跨車系通報次數當成本車故障原因。
+confidence: B－有既有案例資料，但車輛個案仍須驗證
+[/WORKFLOW_KNOWN_CODE]
+
+[WORKFLOW_KNOWN_CODE]
+dtc: P0201
+scope: 工作流程曾使用的測試碼；目前沒有納入 2008 Civic 專屬公開通報
+cross_vehicle_observation: NHTSA 公開通報中共見於 70 份不重複文件、15 個製造商品牌；此數字不代表 Civic 故障率
+answer_rule: 只能把它當成診斷入口；須查正式定義、freeze frame、線路／接頭與主動測試，不得看到代碼就宣告噴油嘴損壞。
+confidence: C－只有跨車系公開通報觀察索引
+[/WORKFLOW_KNOWN_CODE]
+
+[WORKFLOW_UNVERIFIED_CODE]
+dtc: B1501
+scope: 製造商／模組相依的車身碼；不同品牌與模組可能不同義
+cross_vehicle_observation: NHTSA 公開技術通報索引中未找到精確字串
+answer_rule: 不得替 B1501 指定 Honda 意義。回覆『需要 Honda 專用資料確認』，並要求模組名稱、完整掃描報告、subcode 與 HDS 資訊。
+confidence: U－未取得 2008 Civic 一般版的 Honda 正式定義
+[/WORKFLOW_UNVERIFIED_CODE]

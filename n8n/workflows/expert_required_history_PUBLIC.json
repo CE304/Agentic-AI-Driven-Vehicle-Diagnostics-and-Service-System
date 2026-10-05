@@ -1,0 +1,158 @@
+{
+  "name": "powertrain_expert_required_history [PUBLIC-SANITIZED]",
+  "nodes": [
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "expert_task"
+            },
+            {
+              "name": "dtcs"
+            },
+            {
+              "name": "keywords"
+            },
+            {
+              "name": "current_odometer_km"
+            },
+            {
+              "name": "expert_skill"
+            },
+            {
+              "name": "history_skill"
+            },
+            {
+              "name": "model_id"
+            },
+            {
+              "name": "expert_domain"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "5bd2d397-b09d-4630-8e70-b001a7d0c25f",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8770/api/search",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  expert_domain: $('When Executed by Another Workflow').first().json.expert_domain || '',\n  dtcs: $('When Executed by Another Workflow').first().json.dtcs || '',\n  keywords: $('When Executed by Another Workflow').first().json.keywords || '',\n  current_odometer_km: Number(\n    $('When Executed by Another Workflow').first().json.current_odometer_km || 0\n  )\n}) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "2c04abcd-12ff-4e4c-8edc-ad730ca89845",
+      "name": "vehicle_history_search"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "=={{ $('When Executed by Another Workflow').first().json.model_id }}",
+          "mode": "id"
+        },
+        "responsesApiEnabled": false,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        512,
+        160
+      ],
+      "id": "82dc309b-f65c-4ad8-917e-dbce355373ef",
+      "name": "OpenAI Chat Model"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=={{ `\n你是 AI 車輛診斷系統中的領域專家。\n\n本次由 AI 總監 diagnostic_supervisor 決定呼叫你進行專業會診。\n\n==================================================\n【本次專家領域】\n==================================================\n\n${$('When Executed by Another Workflow').first().json.expert_domain || 'unknown'}\n\n專家領域只能是以下其中之一：\n\npowertrain = 動力系統專家\nelectrical = 電氣電子專家\nbrake = 煞車／ABS／VSA專家\nchassis = 底盤／懸吊／轉向專家\ncooling_hvac = 冷卻／空調專家\nsafety = SRS／安全系統專家\n\n你只能針對本次 expert_domain 所代表的專業領域進行分析。\n\n==================================================\n【AI總監交付的診斷任務】\n==================================================\n\n${$('When Executed by Another Workflow').first().json.expert_task || '未提供'}\n\n==================================================\n【本次相關 DTC】\n==================================================\n\n${$('When Executed by Another Workflow').first().json.dtcs || '無'}\n\n==================================================\n【本次資料庫搜尋關鍵詞】\n==================================================\n\n${$('When Executed by Another Workflow').first().json.keywords || '無'}\n\n==================================================\n【本次車輛里程】\n==================================================\n\n${$('When Executed by Another Workflow').first().json.current_odometer_km || 0} km\n\n==================================================\n【已強制搜尋完成的 SQL 車輛歷史資料】\n==================================================\n\n${JSON.stringify($('vehicle_history_search').first().json, null, 2)}\n\n==================================================\n【本次領域專家 Skill】\n==================================================\n\n${$('When Executed by Another Workflow').first().json.expert_skill || ''}\n\n==================================================\n【車輛歷史資料庫 Skill】\n==================================================\n\n${$('When Executed by Another Workflow').first().json.history_skill || ''}\n\n==================================================\n【強制規則】\n==================================================\n\n1. 你必須遵守上方「本次領域專家 Skill」中的所有專業規則。\n\n2. vehicle_history_search 已經由 n8n 工作流程在你分析之前強制執行完成。\n你必須實際分析 SQL 搜尋結果，不得忽略。\n\n3. SQL 歷史資料只能作為輔助證據。\n不得取代本次實際 OBD、PID、DTC、RAG、使用者症狀或其他即時診斷資料。\n\n4. 如果資料中的 data_origin = simulated，\n只能稱為「模擬案例」或「模擬歷史資料」，\n不得說成本車真實發生過的維修紀錄。\n\n5. 如果 SQL 資料中有與本次：\n- DTC\n- 症狀\n- 零件\n- 故障條件\n- 里程\n- 定期保養\n相關的紀錄，必須說明與目前案例的關聯。\n\n6. 如果沒有找到足夠直接的歷史證據，\n必須明確說：\n「歷史資料庫未提供足夠直接證據」。\n不得自行捏造資料。\n\n7. 不得把推測寫成已確認故障。\n\n8. 必須區分：\n- 已確認事實\n- 高可能原因\n- 待確認原因\n- 無法確認項目\n\n9. 檢查順序應優先：\n低成本、非侵入式、容易確認、與目前證據最相關的項目。\n\n10. 如果目前證據不足，\n必須說明還需要哪些量測、檢查或復診資料。\n\n11. 你不是 AI 總監。\n不要產生整台車的最終診斷報告。\n只輸出你所屬領域的專家會診結果，\n最後交回 diagnostic_supervisor 統整。\n\n12. 全部使用繁體中文。\n\n==================================================\n【輸出格式】\n==================================================\n\n只輸出 JSON。\n不要 Markdown。\n不要在 JSON 前後加入任何說明文字。\n\n{\n  \"expert_domain\": \"${$('When Executed by Another Workflow').first().json.expert_domain || 'unknown'}\",\n\n  \"database_search\": {\n    \"executed\": true,\n    \"summary\": \"本次 SQL 歷史資料搜尋結果摘要\",\n    \"relation_to_current_case\": \"歷史資料與目前故障的關聯\",\n    \"limitations\": \"資料限制，例如 simulated 或證據不足\"\n  },\n\n  \"confirmed_facts\": [\n    \"目前可以直接確認的事實\"\n  ],\n\n  \"possible_causes\": [\n    {\n      \"cause\": \"可能原因\",\n      \"confidence\": \"高 / 中 / 低\",\n      \"evidence\": \"支持此原因的證據\"\n    }\n  ],\n\n  \"recommended_checks\": [\n    {\n      \"priority\": 1,\n      \"inspection\": \"要檢查的項目\",\n      \"purpose\": \"檢查目的\",\n      \"method\": \"建議檢查方式\",\n      \"normal_result\": \"正常結果\",\n      \"abnormal_result\": \"異常代表什麼\",\n      \"next_action\": \"異常時下一步\"\n    }\n  ],\n\n  \"maintenance_findings\": [\n    {\n      \"item\": \"如果 SQL 根據目前里程與維修歷史發現應做但尚未完成的保養項目，填在這裡；沒有則保持空陣列\",\n      \"reason\": \"為什麼需要執行\"\n    }\n  ],\n\n  \"unconfirmed_items\": [\n    \"目前仍無法確認的項目\"\n  ],\n\n  \"expert_conclusion\": \"提供給 diagnostic_supervisor 的本領域專家結論\"\n}\n` }}",
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.9,
+      "position": [
+        496,
+        0
+      ],
+      "id": "5dd1f4be-290a-4f25-a7a7-c6a2e28a2414",
+      "name": "expert_analysis"
+    }
+  ],
+  "pinData": {
+    "When Executed by Another Workflow": [
+      {
+        "json": {
+          "expert_task": "2009 Honda Civic 1.8L，引擎怠速抖動且加速無力，請分析可能原因。",
+          "dtcs": "P0101",
+          "keywords": "怠速抖動,MAF,進氣,加速無力",
+          "current_odometer_km": 160000
+        }
+      }
+    ]
+  },
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "vehicle_history_search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "vehicle_history_search": {
+      "main": [
+        [
+          {
+            "node": "expert_analysis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "expert_analysis",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "4b71b48e-f08f-4b1f-9225-1cd5ba6197b3",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "f22a866b9580dd4591b279ea90dbce6e9e0aaf0a5fba4f0469669b28cde723f6"
+  },
+  "id": "Z3DKQTJmlvEhFoPE",
+  "tags": []
+}

@@ -1,0 +1,25 @@
+DTC RAG 擴充包來源清單
+
+建立日期：2026-08-20
+NHTSA datasets and APIs: https://www.nhtsa.gov/nhtsa-datasets-and-apis
+NHTSA manufacturer communications: https://www.nhtsa.gov/vehicle-manufacturers/manufacturer-communications
+NHTSA public dataset base: https://static.nhtsa.gov/odi/ffdd/tsbs/
+SAE J2012 overview: https://saemobilus.sae.org/standards/j2012_202509-diagnostic-trouble-code-definitions
+SAE J2012DA overview: https://www.sae.org/standards/j2012da_202403-digital-annex-diagnostic-trouble-code-definitions-failure-type-byte-definitions
+Honda ServiceExpress: https://techinfo.honda.com/
+
+輸入資料列：1,126,177
+不重複 DTC 字串：5,629
+2008 Civic 家族文件索引資料列：106
+
+輸入檔 SHA-256：
+MFR_COMMS_RECEIVED_2005-2009.zip	905405	7d4722d2ccccc2ec8a13db6092e0f1f440057868290a065ef969988d5802eeba
+MFR_COMMS_RECEIVED_2010-2014.zip	2022553	ef877a5adb408fc0afebc5a6a6951ee067975a17ece07fcb214de7426b172dba
+MFR_COMMS_RECEIVED_2015-2019.zip	13104210	5552d598af650064ce4c17af2c625f8b5e999bf4ec8e6d607d2fa46aa249d935
+MFR_COMMS_RECEIVED_2020-2024.zip	11685863	83efd2983f5078f8cbc04ca06678580fc02473abc864dcec33e75940b0071754
+MFR_COMMS_RECEIVED_2025-2026.zip	4978932	49192fbab6ad00d3df618ef1c611c6b074abcfb0a3b017d090f183503afccead
+
+資料限制：
+1. NHTSA Manufacturer Communications 是公開文件索引／摘要資料；本擴充包以代碼字串、文件 ID 與統計整理，不大量重製通報內容。
+2. 代碼出現在公開摘要，不代表適用於 2008 Civic，也不代表該代碼的正式定義或故障率。
+3. 完整現行 DTC 定義須以 SAE J2012/J2012DA 與 Honda 原廠資料為準。

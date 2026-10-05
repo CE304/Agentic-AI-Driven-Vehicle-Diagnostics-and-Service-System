@@ -1,0 +1,1481 @@
+{
+  "name": "AI車輛診斷_實體OBD_MAIN [PUBLIC-SANITIZED]",
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "mode": "webhook",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        1408,
+        896
+      ],
+      "id": "3ff7c6b8-a833-460c-b61b-31610a0bfca3",
+      "name": "When chat message received",
+      "webhookId": "65f635fe-5fab-4449-82dc-e4eff6814c28"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "={{ $('取得LM第一個模型').item.json.data[0].id }}",
+          "mode": "id"
+        },
+        "responsesApiEnabled": false,
+        "options": {
+          "temperature": 0
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        2048,
+        1040
+      ],
+      "id": "bd366b6c-bb5d-427d-9fbe-052d17ea0297",
+      "name": "LMStudio Model"
+    },
+    {
+      "parameters": {
+        "url": "http://127.0.0.1:1234/v1/models",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1616,
+        896
+      ],
+      "id": "f65f7534-0fdb-438e-bd5d-a93f38445678",
+      "name": "取得LM第一個模型"
+    },
+    {
+      "parameters": {
+        "endpointUrl": "http://127.0.0.1:8000/sse",
+        "serverTransport": "sse",
+        "include": "selected",
+        "includeTools": [
+          "search_vehicle_rag"
+        ],
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpClientTool",
+      "typeVersion": 1.2,
+      "position": [
+        2416,
+        1040
+      ],
+      "id": "c1e248c1-1039-45a4-8922-ad5192d056e7",
+      "name": "MCP Client"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('When chat message received').item.json.chatInput }}",
+        "options": {
+          "systemMessage": "=你是「AI 智慧車輛診斷總監 diagnostic_supervisor」。\n\n你的角色是「診斷流程管理者與報告整理者」。\n\n你不是汽車維修專家。\n\n你不負責自行推論故障根因，也不負責自行決定維修方法。\n\n真正的汽車故障診斷、故障原因推論、檢查方法與維修建議，必須交給領域專家完成。\n\n你的工作只有：\n\n1. 收集使用者提供的症狀與資訊。\n2. 實際取得本次 OBD 資料。\n3. 實際搜尋本次相關 RAG 技術資料。\n4. 把「使用者資訊 + OBD + RAG」完整交給真正相關的領域專家。\n5. 收集專家診斷結果。\n6. 每次強制呼叫 safety_expert1 做行駛安全評估。\n7. 最後只負責把專家分析與證據整理成網站需要的 JSON。\n\n全部使用繁體中文。\n\n==================================================\n一、固定車輛\n==================================================\n\n本系統固定診斷：\n\n2009 Honda Civic 1.8L\nR18A 1.8L i-VTEC\n\n所有 OBD、RAG、專家會診與最終報告都以此車輛為背景。\n\n不得自行改成其他年份、車型或引擎。\n\n==================================================\n二、AI 總監禁止做的事情\n==================================================\n\nAI 總監禁止自行：\n\n- 判斷真正故障根因\n- 判定某個零件已損壞\n- 自己分析哪個零件應該更換\n- 自己產生維修程序取代專家\n- 自己判斷車輛是否可以安全行駛\n- 使用自身汽車知識取代領域專家\n- 在沒有實際呼叫專家的情況下撰寫專家結論\n- 用文字寫「正在呼叫某專家」假裝 Tool 已經執行\n\n例如：\n\n如果本次出現 P0351，\n\nAI 總監不得自己判斷：\n\n「點火線圈損壞」\n「線束故障」\n「ECU 控制異常」\n\nAI 總監只能：\n\n收集 P0351\n+\n收集 OBD\n+\n搜尋 RAG\n+\n把全部資料交給相關專家分析。\n\n真正的故障意義、可能原因、檢查方式、維修方式，由專家回答。\n\n==================================================\n三、本次使用者輸入必須保留\n==================================================\n\n本輪 User Message 是本次診斷的重要資料來源。\n\n使用者可能提供：\n\n- 車輛症狀\n- DTC\n- 儀表警示\n- 異音\n- 抖動\n- 熄火\n- 難發動\n- 動力不足\n- 加速異常\n- 怠速異常\n- 故障發生條件\n- 已更換零件\n- 已進行維修\n- 其他診斷設備取得的結果\n\n以上資訊必須從診斷開始一直保留到最終報告。\n\n不得因為取得 OBD 後就忘記使用者原本描述。\n\n--------------------------------------------------\n使用者提供的 DTC\n--------------------------------------------------\n\n如果使用者輸入：\n\nPxxxx\nBxxxx\nCxxxx\nUxxxx\n\n必須記錄為：\n\n「使用者提供的 DTC」。\n\n例如：\n\n使用者：\n「車子會抖，掃到 P0351」\n\n必須保留：\n\n使用者症狀：\n車子會抖\n\n使用者提供 DTC：\nP0351\n\n但是：\n\n使用者提供 DTC\n不等於\n本次 OBD 實際讀到的 DTC。\n\n來源必須分開保存。\n\n==================================================\n四、固定診斷流程\n==================================================\n\n每一次完整診斷必須按照以下流程：\n\n使用者輸入\n↓\nget_obd_data\n↓\nMCP Client / RAG\n↓\n選擇真正相關領域專家\n↓\n相關專家實際會診\n↓\nsafety_expert1 強制會診\n↓\nAI 總監整理專家結果\n↓\n輸出 ve_work_order_v1 JSON\n\n在必要工具與專家尚未完成以前：\n\n禁止直接輸出最終診斷報告。\n\n==================================================\n四之一、流程續接規則【本版唯一新增的核心穩定規則】\n==================================================\n\n這一段只規定 Tool 執行順序，不要求你建立額外狀態機、清單、計畫或中間 JSON。\n\n1. get_obd_data 成功後：\n   → 進行一次本次相關 RAG 搜尋。\n\n2. MCP Client / RAG 已成功回傳相關結果後：\n   → 不要再次重複搜尋同一題。\n   → 不要先撰寫長篇中間分析。\n   → 直接呼叫第一位真正相關的領域專家。\n\n3. 一位領域專家完成後：\n   → 如果還有另一位「明顯相關且尚未呼叫」的領域專家，直接呼叫下一位。\n   → 不要重新搜尋 RAG。\n   → 不要重新取得 OBD。\n   → 不要重新從頭分析整個案件。\n\n4. 所有明顯相關領域專家完成後：\n   → 下一個診斷 Tool 必須立即呼叫 safety_expert1。\n   → 不要先輸出中間報告。\n   → 不要先產生最終 JSON。\n   → 不要因為專家意見不同而停在 AI 總監內部長時間推論。\n   → 若專家意見有差異，直接把差異與證據一起交給 safety_expert1。\n\n5. safety_expert1 完成後：\n   → 才進入最終報告整理。\n\n重要：\n\n- 不要建立 selected_domain_experts JSON。\n- 不要建立額外狀態機。\n- 不要建立額外 planning JSON。\n- 不要為了決定下一個 Tool 先輸出一大段文字。\n- 每次只判斷「下一個必要 Tool 是什麼」，然後直接執行。\n\n==================================================\n五、STEP 1：取得本次 OBD\n==================================================\n\n每次診斷都必須實際呼叫：\n\nget_obd_data\n\n使用本次工具真正取得的：\n\n- Stored DTC\n- Pending DTC\n- Permanent DTC\n- PID\n- PID 數值\n- ECU 回覆\n- 本次其他 OBD 資料\n\n不得自行捏造任何 OBD 資料。\n\n如果某個 PID 沒有回覆：\n\n記錄為：\n\n「本次未取得」。\n\n不得自行填入 0 或估算。\n\n--------------------------------------------------\n使用者 DTC 與 OBD DTC\n--------------------------------------------------\n\n取得 OBD 後必須保存兩個來源：\n\nA. 使用者提供 DTC\n\nB. 本次 OBD 實際 DTC\n\n如果相同：\n標記兩者一致。\n\n如果不同：\n兩個都保留。\n\n如果使用者提供的 DTC 本次 OBD 沒有：\n仍然保留給 RAG 與專家分析。\n\nAI 總監只負責整理兩者差異。\n\n不得自行推論為什麼不同。\n\n--------------------------------------------------\nOBD 時間序列使用規則\n--------------------------------------------------\n\n如果 get_obd_data 回傳 10 秒或多筆 OBD samples：\n\n原始 Tool Result 可以保留作為證據。\n\n但是建立 expert_task 時，只需要把與該專家相關的 OBD 重點交給他，例如：\n\n- DTC\n- 重要 PID\n- 重要 PID 數值\n- 明顯趨勢或範圍\n- sample_count\n- duration_seconds\n- LIVE / REPLAY\n\n不要把每一筆 sample 中重複的 connection、interface、protocol、label、DTC metadata 全部重新複製到每一個 expert_task。\n\n不得因精簡而自行發明不存在的數值或趨勢。\n\n==================================================\n六、STEP 2：強制搜尋 RAG\n==================================================\n\n取得 OBD 後，\n\n每一次完整診斷都必須實際呼叫：\n\nMCP Client\n\n搜尋本次相關車輛技術資料。\n\nRAG 搜尋內容必須包含與本次有關的：\n\n- 使用者症狀\n- 使用者提供 DTC\n- OBD 實際 DTC\n- 異常 PID\n- 相關系統\n- 2009 Honda Civic 1.8L\n\n例如：\n\n使用者：\n車輛抖動、P0351\n\nOBD：\nP0354\n\n則 RAG 必須考慮：\n\nP0351\nP0354\n車輛抖動\n點火相關技術資料\n2009 Honda Civic 1.8L\n\n可搜尋：\n\n- 維修手冊\n- DTC 診斷流程\n- PID 正常範圍\n- TSB\n- 召回\n- 常見故障\n- 維修案例\n- 技術資料\n- 維修程序\n\nRAG 的結果是提供給專家的技術證據。\n\nAI 總監不得自己使用 RAG 結果直接完成故障診斷。\n\n如果 RAG 沒找到足夠資料：\n\n記錄：\n\n「RAG 未找到足夠直接證據。」\n\n然後仍然繼續專家會診。\n\n--------------------------------------------------\nRAG 呼叫次數規則\n--------------------------------------------------\n\n只要 MCP Client 已經成功回傳與本次 DTC / 症狀 / 異常 PID 有關的結果：\n\n本次主要 RAG 搜尋即視為完成。\n\n不要重複搜尋完全相同的問題。\n\n只有以下情況才允許再補一次 RAG：\n\n- 第一次 Tool Error\n- 第一次完全沒有結果\n- 第一次結果明顯查錯主題，完全與本案無關\n\n最多補一次。\n\n第二次之後不再重複搜尋，直接進入相關領域專家。\n\n==================================================\n七、建立「專家診斷資料包」\n==================================================\n\n完成使用者資料、OBD、RAG 後，\n\nAI 總監必須建立完整診斷資料包給相關專家。\n\n資料包至少包含：\n\n【固定車輛】\n2009 Honda Civic 1.8L R18A\n\n【目前里程】\n使用網站本次提供的實際公里數\n\n【使用者症狀】\n完整保留本次使用者描述\n\n【使用者提供 DTC】\n如果有則完整列出\n\n【本次 OBD 實際 DTC】\nStored / Pending / Permanent 分別保留\n\n【本次 OBD / PID】\n將本次取得且與案件相關的重要 PID 與數值交給專家\n\n【RAG 搜尋結果】\n將本次真正找到的相關技術資料交給專家\n\n【資料來源】\nLIVE 或 REPLAY\n\n【專家任務】\n要求該專家根據以上全部資料進行真正診斷推論\n\n不得只把一個 DTC 丟給專家。\n\n不得只告訴專家：\n\n「請分析 P0351」。\n\n必須把目前已取得的案件資訊一起提供。\n\n但不要把整份 OBD 原始 JSON 或整份 RAG 原文無目的完整複製到每一個 expert_task。\n\n==================================================\n八、STEP 3：選擇領域專家\n==================================================\n\nAI 總監可以做「專家路由」。\n\n這只是決定資料應交給哪個專業領域。\n\n不是故障診斷。\n\n可用專家：\n\npowertrain_expert1\n= 引擎、點火、燃油、進氣、排放、失火、動力、變速相關\n\nelectrical_expert1\n= 電路、感知器、線束、插頭、供電、接地、控制訊號、ECU、CAN\n\nbrake_expert1\n= 煞車、ABS、VSA\n\nchassis_expert1\n= 底盤、懸吊、轉向、EPS\n\ncooling_hvac_expert1\n= 冷卻、水溫、散熱風扇、空調\n\n只呼叫真正相關的領域專家。\n\n但是：\n\n只要存在故障碼或明確故障症狀，\n\n至少必須實際呼叫一位相關領域專家。\n\n--------------------------------------------------\n明確路由原則\n--------------------------------------------------\n\n涉及：\n\n引擎\n點火\n失火\n燃油\n進氣\n排放\n動力\n\n→ powertrain_expert1\n\n涉及：\n\n電路\n開路\n短路\n高電壓\n低電壓\n訊號\n感知器\n插頭\n線束\n供電\n接地\nECU 控制\nCAN\n\n→ electrical_expert1\n\n涉及：\n\nABS\nVSA\n煞車\n輪速\n\n→ brake_expert1\n\n涉及：\n\n懸吊\n底盤\n轉向\nEPS\n\n→ chassis_expert1\n\n涉及：\n\n水溫\n冷卻液\n散熱\n風扇\n空調\n\n→ cooling_hvac_expert1\n\n如果一個案件同時跨兩個領域：\n\n必須同時呼叫兩位相關專家。\n\n例如點火線圈控制電路案件可能同時需要：\n\npowertrain_expert1\n+\nelectrical_expert1\n\nAI 總監不得因為覺得一位專家已經足夠，就自行取代另一個明顯相關領域。\n\n--------------------------------------------------\n領域專家呼叫續接規則\n--------------------------------------------------\n\nOBD + RAG 完成後：\n\n直接呼叫第一位相關專家。\n\n第一位完成後：\n\n如果還有另一位明顯相關專家尚未呼叫：\n→ 直接呼叫下一位。\n\n如果沒有其他明顯相關專家尚未呼叫：\n→ 直接呼叫 safety_expert1。\n\n同一位領域專家正常情況只呼叫一次。\n\nTool 明確失敗時最多重試一次。\n\n==================================================\n九、STEP 4：相關專家是真正的診斷者\n==================================================\n\n領域專家的任務是：\n\n根據：\n\n使用者症狀\n+\n使用者 DTC\n+\n本次 OBD\n+\nPID\n+\nRAG\n+\nSQL 歷史資料\n\n真正進行故障推論。\n\n專家負責回答：\n\n- DTC 代表什麼\n- DTC 屬於什麼系統\n- ECU 偵測到的是什麼異常\n- 可能故障原因\n- 哪些原因最符合目前證據\n- 哪些原因尚未確認\n- 需要做哪些實際檢查\n- 正確檢查順序\n- 維修方式\n- 維修後如何驗證\n\n這些內容全部由專家提供。\n\nAI 總監不得自行補寫專家沒有提出的技術結論。\n\n如果不同專家意見不同：\n\n保留不同意見與各自證據。\n\nAI 總監不得因為意見不同而卡住做長時間重新推論。\n\n==================================================\n十、專家 Tool 輸入規則\n==================================================\n\n呼叫專家時使用該 Tool 真正要求的欄位。\n\n核心內容必須包含：\n\nexpert_task\ndtcs\nkeywords\ncurrent_odometer_km\n\n如果實際 Tool schema 使用帶領域前綴的欄位，例如：\n\npowertrain_task\npowertrain_dtcs\npowertrain_keywords\npowertrain_odometer_km\n\n或 electrical_task / cooling_hvac_task 等，\n\n必須依照實際 Tool schema 填寫。\n\n--------------------------------------------------\nexpert_task\n--------------------------------------------------\n\n必須包含完整案件資料。\n\n例如：\n\n「請以 2009 Honda Civic 1.8L R18A 為背景進行診斷。\n\n使用者症狀：\n...\n\n使用者提供 DTC：\n...\n\n本次 OBD 實際 DTC：\n...\n\n本次重要 PID：\n...\n\n本次 RAG 技術資料：\n...\n\n資料來源：\nLIVE / REPLAY\n\n請根據以上全部證據進行本領域診斷。\n請詳細解釋相關 DTC 的真正意義、可能原因、支持證據、待確認項目、檢查順序、維修建議與驗證方法。\n\n不得只根據 DTC 名稱直接判定零件損壞。」\n\n--------------------------------------------------\ndtcs\n--------------------------------------------------\n\n填入本次需要專家分析的相關 DTC。\n\n如果同時存在：\n\n使用者提供 DTC\n+\nOBD DTC\n\n可以都提供，\n\n但 expert_task 必須清楚標記來源。\n\n--------------------------------------------------\nkeywords\n--------------------------------------------------\n\n使用：\n\nDTC\n症狀\n相關系統\n重要零件\nRAG 關鍵技術問題\n\n建立。\n\n--------------------------------------------------\ncurrent_odometer_km\n--------------------------------------------------\n\n只能使用本次網站提供的實際公里數。\n\n不得自行修改。\n\n==================================================\n十一、專家 SQL 歷史資料\n==================================================\n\n每位專家的子工作流會自行執行：\n\nvehicle_history_search\n\nSQL 歷史資料由專家自己使用。\n\nAI 總監不負責代替專家進行 SQL 診斷。\n\n如果：\n\ndata_origin = simulated\n\n只能視為：\n\n模擬案例\n或\n模擬歷史資料。\n\n不得寫成本車真實維修歷史。\n\n如果 SQL 其他案例的里程與網站本次里程不同：\n\n不得用 SQL 里程覆蓋本次 current_odometer_km。\n\n==================================================\n十二、DTC 詳細解釋必須來自專家\n==================================================\n\n如果本次存在任何：\n\n使用者提供 DTC\n或\nOBD 實際 DTC，\n\n相關專家必須在結果中詳細說明。\n\n每個 DTC 至少需要包含：\n\n- DTC 代碼\n- 完整意義\n- 所屬系統\n- ECU 偵測到的異常類型\n- 可能涉及部位\n- 常見可能原因\n- 目前哪些原因受到本次證據支持\n- 可能症狀\n- 與本次 OBD / PID 的關聯\n- RAG 支持資料\n- 尚未確認項目\n- 下一步檢查方式\n\nAI 總監最後只能整理專家的 DTC 解釋。\n\n不得自己另外創造 DTC 技術結論。\n\n如果 RAG 與不同專家對同一 DTC 定義有差異：\n\n最終必須如實保留差異與「仍需確認」。\n\n不得由 AI 總監自行創造一個第三種定義。\n\n==================================================\n十三、STEP 5：安全專家每次強制執行\n==================================================\n\n每一次診斷都必須實際呼叫：\n\nsafety_expert1\n\n沒有例外。\n\n即使：\n\n- 沒有 DTC\n- 故障看似很小\n- 其他專家認為問題不嚴重\n\n仍然必須問安全專家。\n\n--------------------------------------------------\n安全專家強制續接規則\n--------------------------------------------------\n\n當最後一位明顯相關領域專家 Tool 已回傳：\n\n下一個診斷 Tool 必須立即是：\n\nsafety_expert1\n\n此時：\n\n不要重新搜尋 RAG。\n不要重新取得 OBD。\n不要重新呼叫已完成領域專家。\n不要先產生最終報告。\n不要先寫長篇中間摘要。\n不要先重新推論故障根因。\n\n只需要把目前已取得的案件重點與領域專家結果交給 safety_expert1。\n\n如果專家意見不同：\n\n直接把不同意見與各自證據一起交給 safety_expert1。\n\n--------------------------------------------------\n安全專家取得的資料\n--------------------------------------------------\n\n呼叫 safety_expert1 時，\n\n必須提供：\n\n- 使用者症狀\n- 使用者提供 DTC\n- 本次 OBD DTC\n- 重要 OBD / PID\n- RAG 技術資料\n- 已完成的相關領域專家診斷結果\n- 專家意見差異\n- LIVE / REPLAY 資料來源\n\n為避免重複資料膨脹：\n\n不要再次複製整份 OBD samples 原始 JSON。\n\n不要再次無目的複製全部 RAG 原文。\n\n保留安全判斷需要的主要事實、專家結論、可能原因、重要檢查與待確認項目即可。\n\n--------------------------------------------------\n安全專家負責回答\n--------------------------------------------------\n\n1. 目前是否適合繼續行駛\n2. 行駛風險程度\n3. 是否存在立即危險\n4. 是否應避免高速\n5. 是否應避免長途\n6. 是否應避免高負荷\n7. 是否需要盡快維修\n8. 是否需要立即維修\n9. 是否建議停止行駛\n10. 是否建議拖吊\n11. 上述安全判斷的證據\n\nAI 總監不得自行取代安全專家的判斷。\n\n==================================================\n十四、update_diagnosis_progress\n==================================================\n\nupdate_diagnosis_progress 只負責網站動畫。\n\n它不是診斷專家。\n\n它不能產生或修改診斷結論。\n\nRAG 階段可使用：\n\nstage = data\n\n專家開始：\n\nstage = experts\nexpert = 對應領域\nstatus = consulting\n\n專家完成：\n\nstage = experts\nexpert = 對應領域\nstatus = done\n\n準備整理最終報告：\n\nstage = report\n\n--------------------------------------------------\n網站動畫 expert 名稱固定使用\n--------------------------------------------------\n\nupdate_diagnosis_progress 的 expert 欄位固定只使用：\n\npowertrain\nelectrical\nbrake\nchassis\ncooling\nsafety\n\n對應真正專家 Tool：\n\npowertrain_expert1 → powertrain\nelectrical_expert1 → electrical\nbrake_expert1 → brake\nchassis_expert1 → chassis\ncooling_hvac_expert1 → cooling\nsafety_expert1 → safety\n\n注意：\n\n真正呼叫專家時，Tool 名稱仍然使用 powertrain_expert1、electrical_expert1 等。\n\n只有 update_diagnosis_progress 的 expert 欄位使用短名稱。\n\n--------------------------------------------------\nprogress 不得取代真正專家\n--------------------------------------------------\n\n正確順序：\n\n某位專家準備開始\n→ update_diagnosis_progress consulting\n→ 立即真正呼叫該專家 Tool\n→ 專家回傳\n→ update_diagnosis_progress done\n→ 下一位\n\n不要一次先連續標記多位專家 consulting，再很久之後才真正呼叫。\n\n同一個 expert + status 不得無目的重複呼叫。\n\nprogress Tool 完成後直接繼續原流程。\n\n==================================================\n十五、Tool 失敗與重試\n==================================================\n\n避免無限循環。\n\nget_obd_data：\n正常一次。\n明確 Tool Error 時最多重試一次。\n\nMCP Client：\n成功取得相關結果後即完成。\n只有 Tool Error / 完全無結果 / 完全查錯主題時最多補一次。\n\n每位領域專家：\n正常最多一次。\n明確 Tool Error 時最多重試一次。\n\nsafety_expert1：\n每次至少一次。\n明確 Tool Error 時最多重試一次。\n\n不要因為 Tool 已成功但答案不完全符合預期，就無目的重複呼叫同一 Tool。\n\n==================================================\n十六、最終報告前的硬性條件\n==================================================\n\n在輸出最終報告以前必須確認：\n\n1. get_obd_data 已實際執行。\n\n2. MCP Client 已實際執行。\n\n3. 如果有故障碼或明確故障症狀：\n   至少一位真正相關的領域專家已實際執行。\n\n4. 所有明顯相關的領域專家已完成。\n\n5. safety_expert1 已實際執行。\n\n6. safety_expert1 已取得相關專家分析結果。\n\n如果以上必要條件尚未完成：\n\n禁止輸出最終報告。\n\n禁止用文字假裝 Tool 已經執行。\n\n必須實際呼叫缺少的 Tool。\n\n==================================================\n十七、AI 總監最後只做資料整理\n==================================================\n\n所有專家完成後，\n\nAI 總監只負責整理：\n\n【使用者資料】\n\n【OBD 資料】\n\n【RAG 資料】\n\n【各領域專家結果】\n\n【SQL 輔助證據】\n\n【安全專家結果】\n\n整理時：\n\n不得加入專家沒有提出的新故障原因。\n\n不得加入專家沒有提出的新維修方式。\n\n不得自行改變安全專家的安全結論。\n\n如果不同專家有不同意見：\n\n如實整理各自的證據與差異。\n\n不得由 AI 總監自行創造第三種診斷。\n\n==================================================\n十八、證據來源必須分清楚\n==================================================\n\n最終報告必須區分：\n\n- 使用者反映\n- 使用者提供 DTC\n- 本次 OBD 實際 DTC\n- 本次 PID\n- RAG 技術資料\n- 領域專家分析\n- SQL 輔助資料\n- safety_expert1 安全評估\n- LIVE / REPLAY 資料來源\n- simulated 資料限制\n\n不得把不同來源混在一起當成已確認事實。\n\n==================================================\n十九、網站派工單\n==================================================\n\nwork_order_items 只能根據專家實際提出的：\n\n- maintenance\n- inspection\n- repair\n- safety\n\n建立。\n\nAI 總監不得自己發明維修項目。\n\npriority 只能使用：\n\nurgent\nhigh\nnormal\nrecommend\n\n每項需包含：\n\ntitle\nsummary\nreason\nevidence\ndetail\nactions\nverification\n\n==================================================\n二十、網站最終輸出格式\n==================================================\n\n所有必要工具與專家完成後，\n\n輸出一個合法 JSON object。\n\n第一個字元必須是：\n\n{\n\n最後一個字元必須是：\n\n}\n\n不要 Markdown。\n\n不要 ```json。\n\n不要在 JSON 前後加入其他文字。\n\n輸出格式：\n\n{\n  \"schema_version\": \"ve_work_order_v1\",\n\n  \"vehicle\": {\n    \"model\": \"2009 Honda Civic 1.8L\",\n    \"odometer_km\": 0,\n    \"dtcs\": []\n  },\n\n  \"work_order_items\": [\n    {\n      \"id\": \"WO-01\",\n      \"type\": \"maintenance|inspection|repair|safety\",\n      \"title\": \"派工項目名稱\",\n      \"priority\": \"urgent|high|normal|recommend\",\n      \"status\": \"pending\",\n      \"summary\": \"簡短說明\",\n      \"reason\": \"專家提出此派工項目的原因\",\n      \"evidence\": [\n        \"使用者 / OBD / RAG / SQL / 專家實際證據\"\n      ],\n      \"detail\": \"依專家分析整理的完整技術說明\",\n      \"actions\": [\n        \"專家提出的實際檢查或維修步驟\"\n      ],\n      \"verification\": [\n        \"專家提出的完成後驗證方法\"\n      ],\n      \"source\": \"maintenance_history|obd|rag|expert|safety\"\n    }\n  ],\n\n  \"full_report\": {\n    \"vehicle_basic\": \"整理車輛、公里數、使用者症狀、使用者提供 DTC、LIVE/REPLAY 與本次診斷條件\",\n\n    \"dtc_analysis\": \"整理相關領域專家對所有使用者提供 DTC 與本次 OBD DTC 的詳細分析，明確區分兩種來源；若不同專家或 RAG 定義有差異則如實標記\",\n\n    \"obd_analysis\": \"整理本次實際 OBD / PID 資料，以及專家如何解讀這些資料\",\n\n    \"technical_evidence\": \"整理本次實際 RAG 與 SQL 技術證據，明確標示 simulated 等限制\",\n\n    \"expert_consultation\": \"整理本次真正呼叫的各領域專家、各專家的診斷結果與待確認項目\",\n\n    \"safety_assessment\": \"只整理 safety_expert1 的實際安全評估，包括是否能繼續行駛、風險、限制、立即維修或拖吊需求\",\n\n    \"final_diagnosis\": \"只整理各專家最後形成的診斷共識、已確認項目、可能原因與待確認項目；AI 總監不得自行新增故障推論\",\n\n    \"repair_recommendation\": \"只整理專家提出的檢查順序、維修建議與驗證方法\"\n  }\n}\n\n==================================================\n二十一、輸出前最後確認\n==================================================\n\n輸出前確認：\n\n□ 使用者症狀已保存\n\n□ 使用者提供 DTC 已保存\n\n□ get_obd_data 已真正執行\n\n□ OBD DTC 與使用者 DTC 已區分\n\n□ LIVE / REPLAY 來源已保存\n\n□ MCP Client 已真正執行\n\n□ 成功 RAG 後沒有無目的重複搜尋\n\n□ RAG 結果已交給專家\n\n□ 有故障時至少一位相關領域專家已真正執行\n\n□ 所有明顯相關領域專家已完成\n\n□ 同一位專家沒有無目的重複呼叫\n\n□ 專家取得了使用者 + OBD + RAG 資料\n\n□ DTC 詳細解釋來自專家\n\n□ 故障推論來自專家\n\n□ 維修建議來自專家\n\n□ 所有明顯相關領域專家完成後，下一個診斷 Tool 是 safety_expert1\n\n□ safety_expert1 每次都已真正執行\n\n□ safety_expert1 取得了其他專家的結果\n\n□ 安全判斷來自 safety_expert1\n\n□ progress expert 使用 powertrain/electrical/brake/chassis/cooling/safety\n\n□ AI 總監沒有自行修車或新增故障推論\n\n□ simulated SQL 沒有被寫成本車真實歷史\n\n□ 沒有用文字假裝 Tool 已經被呼叫\n\n□ 最終 JSON 可以解析\n\n□ output 不得為空\n\n全部完成後才輸出 ve_work_order_v1。\n\n==================================================\n二十二、最後執行口訣\n==================================================\n\n只記住：\n\nOBD\n→ RAG\n→ 相關領域專家\n→ 其他仍明顯相關的領域專家\n→ safety_expert1\n→ 最終 JSON\n\nRAG 成功後不要一直搜。\n專家完成後不要一直重新分析。\n領域專家都完成後不要停，直接 safety_expert1。",
+          "maxIterations": 20
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        2192,
+        896
+      ],
+      "id": "2852e99a-84f1-4cd2-800e-52c0cc914d30",
+      "name": "diagnostic_supervisor"
+    },
+    {
+      "parameters": {
+        "toolDescription": "當問題涉及引擎、進氣、燃油、點火、排氣、冷卻、變速箱、\nP開頭動力故障碼、怠速抖動、熄火或加速無力時，呼叫此專家。",
+        "text": "={{ $fromAI(\"powertrain_task\", \"請提供完整的車型、症狀、DTC、PID、OBD資料與RAG內容，交給動力系統專家分析\", \"string\") }}",
+        "options": {
+          "systemMessage": "={{ [\n  $('Tidy Skill').first().json.skills.powertrain_expert,\n  $('Tidy Skill').first().json.skills.vehicle_history_db_skill\n].filter(Boolean).join('\\n\\n') }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 3,
+      "position": [
+        2048,
+        1248
+      ],
+      "id": "e8f27f46-520b-4313-8b3a-d85319ef7512",
+      "name": "powertrain_expert"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "={{ $('取得LM第一個模型').item.json.data[0].id }}",
+          "mode": "id"
+        },
+        "responsesApiEnabled": false,
+        "options": {
+          "maxTokens": 1024,
+          "temperature": 0.1,
+          "timeout": 120000,
+          "maxRetries": 1
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        2048,
+        1456
+      ],
+      "id": "4a5d7645-6d1b-465a-b8cc-f4b8b9ec0226",
+      "name": "lmstudio_powertrain"
+    },
+    {
+      "parameters": {
+        "toolDescription": "專門分析汽車電氣與電子控制問題。當出現電瓶、發電機、\n啟動困難、供電異常、接地不良、保險絲、繼電器、線束、\n感知器訊號或車載通訊問題時使用。",
+        "text": "={{ $fromAI(\"electrical_task\", \"傳入整理後的車型、症狀、DTC、PID、RAG證據與來源檔案，內容不得超過1200個中文字\", \"string\") }}",
+        "options": {
+          "systemMessage": "={{ [\n  $('Tidy Skill').first().json.skills.electrical_expert,\n  $('Tidy Skill').first().json.skills.vehicle_history_db_skill\n].filter(Boolean).join('\\n\\n') }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 3,
+      "position": [
+        2304,
+        1248
+      ],
+      "id": "3033240b-768b-4b66-a202-72d6b57bb801",
+      "name": "electrical_expert"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "={{ $('取得LM第一個模型').item.json.data[0].id }}",
+          "mode": "id"
+        },
+        "responsesApiEnabled": false,
+        "options": {
+          "maxTokens": 1024,
+          "temperature": 0.1,
+          "timeout": 120000,
+          "maxRetries": 1
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        2304,
+        1456
+      ],
+      "id": "50852ffd-9320-4381-a321-29122bac35e1",
+      "name": "lmstudio_electrical"
+    },
+    {
+      "parameters": {
+        "toolDescription": "專門分析汽車煞車、ABS與VSA問題。當出現煞車踏板異常、\n煞車力不足、偏煞、異音、煞車液洩漏、ABS燈、VSA燈、\n輪速感知器或煞車故障碼時使用。",
+        "text": "={{ $fromAI(\"brake_task\", \"傳入整理後的車型、症狀、DTC、PID、RAG證據與來源檔案，內容不得超過1200個中文字\", \"string\") }}",
+        "options": {
+          "systemMessage": "={{ [\n  $('Tidy Skill').first().json.skills.brake_expert,\n  $('Tidy Skill').first().json.skills.vehicle_history_db_skill\n].filter(Boolean).join('\\n\\n') }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 3,
+      "position": [
+        2560,
+        1248
+      ],
+      "id": "7e282735-bdb3-4bba-8c30-02a5b4e3edf3",
+      "name": "brake_expert"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "={{ $('取得LM第一個模型').item.json.data[0].id }}",
+          "mode": "id"
+        },
+        "responsesApiEnabled": false,
+        "options": {
+          "maxTokens": 1024,
+          "temperature": 0.1,
+          "timeout": 120000,
+          "maxRetries": 1
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        2560,
+        1456
+      ],
+      "id": "356d17f2-0a07-4ece-ba39-cbbbc5a07c10",
+      "name": "lmstudio_brake"
+    },
+    {
+      "parameters": {
+        "toolDescription": "專門分析汽車底盤、轉向、懸吊、輪胎、定位、輪軸及軸承問題。\n當出現方向盤異常、車輛跑偏、底盤異音、震動、輪胎異常磨耗、\nEPS警示燈、懸吊鬆動或軸承噪音時使用。",
+        "text": "={{ $fromAI(\"chassis_task\", \"傳入整理後的車型、症狀、DTC、PID、RAG證據與來源檔案，內容不得超過1200個中文字\", \"string\") }}",
+        "options": {
+          "systemMessage": "={{ [\n  $('Tidy Skill').first().json.skills.chassis_expert,\n  $('Tidy Skill').first().json.skills.vehicle_history_db_skill\n].filter(Boolean).join('\\n\\n') }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 3,
+      "position": [
+        2816,
+        1248
+      ],
+      "id": "77628e70-68b6-4559-bb36-e466f462ba8b",
+      "name": "chassis_expert"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "={{ $('取得LM第一個模型').item.json.data[0].id }}",
+          "mode": "id"
+        },
+        "responsesApiEnabled": false,
+        "options": {
+          "maxTokens": 1024,
+          "temperature": 0.1,
+          "timeout": 120000,
+          "maxRetries": 1
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        2816,
+        1456
+      ],
+      "id": "63717a51-56ac-4f85-a7a3-ca810c47371e",
+      "name": "lmstudio_chassis"
+    },
+    {
+      "parameters": {
+        "toolDescription": "專門分析引擎冷卻、暖氣與冷氣系統問題。當出現引擎過熱、\n冷卻液流失、風扇不轉、水溫異常、暖氣不熱、冷氣不冷、\n壓縮機異常或鼓風機故障時使用。",
+        "text": "={{ $fromAI(\"cooling_hvac_task\", \"傳入整理後的車型、症狀、DTC、PID、RAG證據與來源檔案，內容不得超過1200個中文字\", \"string\") }}",
+        "options": {
+          "systemMessage": "={{ [\n  $('Tidy Skill').first().json.skills.cooling_hvac_expert,\n  $('Tidy Skill').first().json.skills.vehicle_history_db_skill\n].filter(Boolean).join('\\n\\n') }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 3,
+      "position": [
+        3072,
+        1248
+      ],
+      "id": "0d6bac7f-351b-47ec-9778-396b7cb2b57f",
+      "name": "cooling_hvac_expert"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "={{ $('取得LM第一個模型').item.json.data[0].id }}",
+          "mode": "id"
+        },
+        "responsesApiEnabled": false,
+        "options": {
+          "maxTokens": 1024,
+          "temperature": 0.1,
+          "timeout": 120000,
+          "maxRetries": 1
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        3072,
+        1456
+      ],
+      "id": "ed6b0cb5-1589-4a01-ab05-676619c71051",
+      "name": "lmstudio_cooling_hvac"
+    },
+    {
+      "parameters": {
+        "toolDescription": "專門分析SRS、安全氣囊、安全帶、碰撞保護、召回及重大安全風險。\n當出現SRS燈、安全氣囊故障、安全帶預縮器故障、碰撞紀錄、\n召回疑慮，或煞車、轉向、燃油洩漏、過熱等重大危險時使用。",
+        "text": "={{ $fromAI(\"safety_task\", \"傳入整理後的車型、症狀、DTC、PID、RAG證據與來源檔案，內容不得超過1200個中文字\", \"string\") }}",
+        "options": {
+          "systemMessage": "={{ [\n  $('Tidy Skill').first().json.skills.safety_expert,\n  $('Tidy Skill').first().json.skills.vehicle_history_db_skill\n].filter(Boolean).join('\\n\\n') }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 3,
+      "position": [
+        3328,
+        1248
+      ],
+      "id": "98874942-ccf5-46d7-9b73-bfafb4e23c7c",
+      "name": "safety_expert"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "={{ $('取得LM第一個模型').item.json.data[0].id }}",
+          "mode": "id"
+        },
+        "responsesApiEnabled": false,
+        "options": {
+          "maxTokens": 1024,
+          "temperature": 0.1,
+          "timeout": 120000,
+          "maxRetries": 1
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        3328,
+        1456
+      ],
+      "id": "c6313372-4700-47ad-ac5f-addebcc8a387",
+      "name": "lmstudio_safety"
+    },
+    {
+      "parameters": {
+        "toolDescription": "每次開始新的車輛診斷時，必須先呼叫此工具。\n\n工具收到呼叫後，OBD讀取程式會從呼叫當下開始，現場連續收集10秒的實際OBD-II資料，再一次回傳完整結果。\n\n回傳內容包含ECU通訊狀態、DTC、引擎轉速、車速、計算負荷、節氣門位置、進氣歧管壓力、MAF、冷卻液溫度、進氣溫度、點火提前角、燃油液位，以及samples中的10秒連續資料。\n\n診斷時必須分析samples內的連續數據，不得只使用最上層的最後一筆數值，也不得使用舊資料或記憶中的OBD數值代替。\n\n本系統固定車輛為2009 Honda Civic 1.8L。",
+        "url": "http://127.0.0.1:8768/obd/window",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.4,
+      "position": [
+        2224,
+        1040
+      ],
+      "id": "5b3eb2ff-61b0-4f90-81a5-14ee8acfca49",
+      "name": "get_obd_data"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5000/api/report",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  report: $json.output || '',\n  output: $json.output || '',\n  vehicle: '2009 Honda Civic 1.8L',\n  complaint: $('When chat message received').first().json.chatInput || ''\n}) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        2656,
+        896
+      ],
+      "id": "9f740f5c-2651-4077-a763-13b485b4fb3f",
+      "name": "儲存診斷報告到網站"
+    },
+    {
+      "parameters": {
+        "toolDescription": "回報目前車輛診斷進度給網站動畫。開始資料比對、呼叫任何領域專家或開始產生報告前，必須先呼叫本工具。",
+        "method": "POST",
+        "url": "http://127.0.0.1:5000/api/diagnosis-progress",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"stage\": \"{{ $fromAI('stage', '目前階段，只能填 data、experts、report', 'string') }}\",\n  \"expert\": \"{{ $fromAI('expert', '目前呼叫的專家名稱；沒有專家時填空字串。可用 powertrain_expert、electrical_expert、brake_expert、chassis_expert、cooling_hvac_expert、safety_expert', 'string') }}\",\n  \"status\": \"{{ $fromAI('status', '專家狀態；開始詢問專家時填 consulting，其他階段填 waiting', 'string') }}\",\n  \"message\": \"{{ $fromAI('message', '顯示在網站上的簡短繁體中文進度說明', 'string') }}\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.4,
+      "position": [
+        2560,
+        1040
+      ],
+      "id": "7d9a2a96-f03b-4773-9e1c-b5d15aac7e22",
+      "name": "update_diagnosis_progress"
+    },
+    {
+      "parameters": {
+        "fileSelector": "/home/iiit/ve-diagnostics/skills/vehicle-expert-skills/*/SKILL.md",
+        "options": {
+          "dataPropertyName": "data"
+        }
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1.1,
+      "position": [
+        1824,
+        896
+      ],
+      "id": "2807e01b-7ddc-4960-bd5e-5b4410c09a3e",
+      "name": "Read Skills"
+    },
+    {
+      "parameters": {
+        "jsCode": "const inputItems = $input.all();\n\nconst folderToTool = {\n  // 總 AI 使用\n  \"diagnostic-supervisor-core\": \"diagnostic_supervisor_core\",\n  \"obd-acquisition-skill\": \"obd_acquisition_skill\",\n  \"vehicle-rag-skill\": \"vehicle_rag_skill\",\n  \"expert-routing-skill\": \"expert_routing_skill\",\n\n  // 六位專家共用的資料庫 Skill\n  \"vehicle-history-db-skill\": \"vehicle_history_db_skill\",\n\n  // 六位領域專家\n  \"powertrain-expert\": \"powertrain_expert\",\n  \"electrical-expert\": \"electrical_expert\",\n  \"brake-expert\": \"brake_expert\",\n  \"chassis-expert\": \"chassis_expert\",\n  \"cooling-hvac-expert\": \"cooling_hvac_expert\",\n  \"safety-expert\": \"safety_expert\"\n};\n\nconst skills = {};\n\nfor (let index = 0; index < inputItems.length; index++) {\n  const item = inputItems[index];\n  const binaryInfo = item.binary?.data;\n\n  if (!binaryInfo) {\n    continue;\n  }\n\n  const directory = binaryInfo.directory || \"\";\n  const folderName = directory\n    .split(\"/\")\n    .filter(Boolean)\n    .pop();\n\n  const skillKey = folderToTool[folderName];\n\n  if (!skillKey) {\n    continue;\n  }\n\n  const fileBuffer =\n    await this.helpers.getBinaryDataBuffer(index, \"data\");\n\n  skills[skillKey] = fileBuffer.toString(\"utf8\");\n}\n\nreturn [\n  {\n    json: {\n      skills_loaded: Object.keys(skills).length > 0,\n      skill_count: Object.keys(skills).length,\n      skill_names: Object.keys(skills),\n      skills: skills\n    }\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2016,
+        896
+      ],
+      "id": "25c2f1b0-faf8-4419-8ae0-129f52358409",
+      "name": "Tidy Skill"
+    },
+    {
+      "parameters": {
+        "toolDescription": "使用傳統關鍵字、DTC、領域及里程條件，搜尋2009 Honda Civic 1.8L固定車輛的維修保養履歷、固定里程套餐及同車型其他車輛案例。這不是RAG或向量搜尋。",
+        "method": "POST",
+        "url": "http://127.0.0.1:8770/api/search",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"expert_domain\": \"{{ $fromAI('history_domain', '目前專家領域，只能選powertrain、electrical、brake、chassis、cooling_hvac或safety', 'string') }}\",\n  \"dtcs\": \"{{ $fromAI('history_dtcs', '本次相關DTC，以逗號分隔；沒有則空字串', 'string') }}\",\n  \"keywords\": \"{{ $fromAI('history_keywords', '2至5個繁體中文症狀、零件或故障條件關鍵詞，以逗號分隔', 'string') }}\",\n  \"current_odometer_km\": \"{{ $fromAI('history_odometer_km', '本次車輛里程；未知填0', 'number') }}\",\n  \"limit\": 5\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.4,
+      "position": [
+        2736,
+        1696
+      ],
+      "id": "4c0924ce-c66b-43b1-8150-faae0972d04c",
+      "name": "vehicle_history_search"
+    },
+    {
+      "parameters": {
+        "description": "當診斷涉及引擎、進氣、燃油、點火、排氣、冷卻、變速箱、P開頭動力系統DTC、怠速抖動、熄火或加速無力時，由AI總監自行判斷是否呼叫此動力系統專家。專家被呼叫後會強制搜尋車輛歷史資料庫，再進行分析。",
+        "workflowId": {
+          "__rl": true,
+          "value": "",
+          "mode": "list",
+          "cachedResultName": "powertrain_expert_required_history"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "expert_task": "=={{ $fromAI(  'powertrain_task',  '請整理完整的動力系統診斷任務，包含車型、症狀、DTC、PID、OBD資料與RAG證據',  'string') }}",
+            "dtcs": "=={{ $fromAI(  'powertrain_dtcs',  '本次與動力系統相關的DTC，以逗號分隔；沒有則空字串',  'string') }}",
+            "keywords": "=={{ $fromAI(  'powertrain_keywords',  '提供2至5個與本次動力系統故障最相關的症狀、零件或故障條件關鍵詞，以逗號分隔',  'string') }}",
+            "current_odometer_km": "=={{ String(\n  $('When chat message received').first().json.current_odometer_km\n  ||\n  (\n    (\n      $('When chat message received').first().json.chatInput || ''\n    ).match(/(?:【目前里程公里數】|目前里程公里數|目前公里數|目前里程)\\s*[:：]\\s*([0-9,]+)/)\n    || ['', '']\n  )[1]\n).replace(/,/g,'') }}",
+            "expert_skill": "=={{ $('Tidy Skill').first().json.skills.powertrain_expert }}",
+            "history_skill": "=={{ $('Tidy Skill').first().json.skills.vehicle_history_db_skill }}",
+            "model_id": "=={{ $('取得LM第一個模型').first().json.data[0].id }}",
+            "expert_domain": "powertrain"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "expert_task",
+              "displayName": "expert_task",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "dtcs",
+              "displayName": "dtcs",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "keywords",
+              "displayName": "keywords",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "current_odometer_km",
+              "displayName": "current_odometer_km",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "expert_skill",
+              "displayName": "expert_skill",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "history_skill",
+              "displayName": "history_skill",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "model_id",
+              "displayName": "model_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "expert_domain",
+              "displayName": "expert_domain",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "obd_data",
+              "displayName": "obd_data",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        1200,
+        1264
+      ],
+      "id": "392fef13-81e1-4785-9c78-f0e0b731fa8f",
+      "name": "powertrain_expert1"
+    },
+    {
+      "parameters": {
+        "description": "電氣電子專家。當故障涉及電瓶、發電機、啟動系統、感知器、ECU、線束、接地、CAN通訊、電壓或其他電氣電子問題時呼叫。被呼叫後，n8n工作流會強制先執行SQL車輛歷史資料搜尋，再進行專家分析。",
+        "workflowId": {
+          "__rl": true,
+          "value": "",
+          "mode": "list",
+          "cachedResultName": "powertrain_expert_required_history"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "expert_task": "=={{ $fromAI(\n  'electrical_expert_task',\n  '交給電氣電子專家的完整診斷任務。包含需要分析的電源、充電、啟動、感知器、控制模組、線路、接地或通訊相關問題。',\n  'string'\n) }}",
+            "dtcs": "=={{ $fromAI(\n  'electrical_dtcs',\n  '本次與電氣電子系統相關的DTC，以逗號分隔；沒有則空字串',\n  'string'\n) }}",
+            "keywords": "=={{ $fromAI(\n  'electrical_keywords',\n  '提供2至5個與本次電氣電子故障最相關的症狀、零件或故障條件關鍵詞，以逗號分隔',\n  'string'\n) }}",
+            "current_odometer_km": "=={{ String(\n  $('When chat message received').first().json.current_odometer_km\n  ||\n  (\n    (\n      $('When chat message received').first().json.chatInput || ''\n    ).match(/(?:【目前里程公里數】|目前里程公里數|目前公里數|目前里程)\\s*[:：]\\s*([0-9,]+)/)\n    || ['', '']\n  )[1]\n).replace(/,/g,'') }}",
+            "expert_skill": "=={{ $('Tidy Skill').first().json.skills.electrical_expert }}",
+            "history_skill": "=={{ $('Tidy Skill').first().json.skills.vehicle_history_db_skill }}",
+            "model_id": "=={{ $('取得LM第一個模型').first().json.data[0].id }}",
+            "expert_domain": "electrical"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "expert_task",
+              "displayName": "expert_task",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "dtcs",
+              "displayName": "dtcs",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "keywords",
+              "displayName": "keywords",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "current_odometer_km",
+              "displayName": "current_odometer_km",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "expert_skill",
+              "displayName": "expert_skill",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "history_skill",
+              "displayName": "history_skill",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "model_id",
+              "displayName": "model_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "expert_domain",
+              "displayName": "expert_domain",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "obd_data",
+              "displayName": "obd_data",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        1344,
+        1264
+      ],
+      "id": "0f5796ca-05cc-4693-ad01-397ae9a33e2b",
+      "name": "electrical_expert1"
+    },
+    {
+      "parameters": {
+        "description": "煞車系統專家。當診斷涉及煞車系統、ABS、防鎖死煞車、VSA/車身穩定控制、煞車液、煞車油壓、煞車踏板、煞車總泵、卡鉗、來令片、碟盤、輪速感知器、ABS控制模組、煞車警示燈或相關DTC異常時呼叫此專家。只在問題與煞車、ABS或車身穩定控制系統有實際關聯時呼叫。被呼叫後，n8n子工作流會強制先執行SQL車輛歷史資料搜尋，再進行煞車系統專家分析。",
+        "workflowId": {
+          "__rl": true,
+          "value": "",
+          "mode": "list",
+          "cachedResultName": "powertrain_expert_required_history"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "expert_task": "=={{ $fromAI(\n  'brake_expert_task',\n  '交給煞車系統專家的完整診斷任務。包含煞車、ABS、VSA、輪速感知器、煞車液壓與相關控制系統問題。',\n  'string'\n) }}",
+            "dtcs": "=={{ $fromAI(\n  'brake_expert_task',\n  '交給煞車系統專家的完整診斷任務。包含煞車、ABS、VSA、輪速感知器、煞車液壓與相關控制系統問題。',\n  'string'\n) }}",
+            "keywords": "=={{ $fromAI(\n  'brake_keywords',\n  '提供2至5個與本次煞車系統故障最相關的症狀、零件或故障條件關鍵詞，以逗號分隔',\n  'string'\n) }}",
+            "current_odometer_km": "=={{ String(\n  $('When chat message received').first().json.current_odometer_km\n  ||\n  (\n    (\n      $('When chat message received').first().json.chatInput || ''\n    ).match(/(?:【目前里程公里數】|目前里程公里數|目前公里數|目前里程)\\s*[:：]\\s*([0-9,]+)/)\n    || ['', '']\n  )[1]\n).replace(/,/g,'') }}",
+            "expert_skill": "=={{ $('Tidy Skill').first().json.skills.brake_expert }}",
+            "history_skill": "=={{ $('Tidy Skill').first().json.skills.vehicle_history_db_skill }}",
+            "model_id": "=={{ $('取得LM第一個模型').first().json.data[0].id }}",
+            "expert_domain": "brake"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "expert_task",
+              "displayName": "expert_task",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "dtcs",
+              "displayName": "dtcs",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "keywords",
+              "displayName": "keywords",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "current_odometer_km",
+              "displayName": "current_odometer_km",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "expert_skill",
+              "displayName": "expert_skill",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "history_skill",
+              "displayName": "history_skill",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "model_id",
+              "displayName": "model_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "expert_domain",
+              "displayName": "expert_domain",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "obd_data",
+              "displayName": "obd_data",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        1488,
+        1264
+      ],
+      "id": "fd7893b2-1f44-4eb0-bfbc-b98f01270047",
+      "name": "brake_expert1"
+    },
+    {
+      "parameters": {
+        "description": "底盤系統專家。當診斷涉及懸吊、避震器、彈簧、控制臂、球接頭、襯套、輪軸、輪轂、軸承、轉向系統、方向機、方向盤、EPS電動輔助轉向、車身震動、異音、跑偏、輪胎異常磨耗、定位、底盤機械故障或相關DTC時呼叫此專家。只在問題與底盤、懸吊或轉向系統有實際關聯時呼叫。被呼叫後，n8n子工作流會強制先執行SQL車輛歷史資料搜尋，再進行底盤系統專家分析。",
+        "workflowId": {
+          "__rl": true,
+          "value": "",
+          "mode": "list",
+          "cachedResultName": "powertrain_expert_required_history"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "expert_task": "=={{ $fromAI(\n  'chassis_expert_task',\n  '交給底盤系統專家的完整診斷任務。包含懸吊、避震、控制臂、球接頭、襯套、輪軸、輪轂、軸承、轉向、EPS、車身震動、異音、跑偏、輪胎異常磨耗或四輪定位相關問題。',\n  'string'\n) }}",
+            "dtcs": "=={{ $fromAI(\n  'chassis_dtcs',\n  '本次與底盤、懸吊、轉向或EPS系統相關的DTC，以逗號分隔；沒有則空字串',\n  'string'\n) }}",
+            "keywords": "=={{ $fromAI(\n  'chassis_keywords',\n  '提供2至5個與本次底盤、懸吊或轉向故障最相關的症狀、零件或故障條件關鍵詞，以逗號分隔',\n  'string'\n) }}",
+            "current_odometer_km": "=={{ String(\n  $('When chat message received').first().json.current_odometer_km\n  ||\n  (\n    (\n      $('When chat message received').first().json.chatInput || ''\n    ).match(/(?:【目前里程公里數】|目前里程公里數|目前公里數|目前里程)\\s*[:：]\\s*([0-9,]+)/)\n    || ['', '']\n  )[1]\n).replace(/,/g,'') }}",
+            "expert_skill": "=={{ $('Tidy Skill').first().json.skills.chassis_expert }}",
+            "history_skill": "=={{ $('Tidy Skill').first().json.skills.vehicle_history_db_skill }}",
+            "model_id": "=={{ $('取得LM第一個模型').first().json.data[0].id }}",
+            "expert_domain": "chassis"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "expert_task",
+              "displayName": "expert_task",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "dtcs",
+              "displayName": "dtcs",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "keywords",
+              "displayName": "keywords",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "current_odometer_km",
+              "displayName": "current_odometer_km",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "expert_skill",
+              "displayName": "expert_skill",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "history_skill",
+              "displayName": "history_skill",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "model_id",
+              "displayName": "model_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "expert_domain",
+              "displayName": "expert_domain",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "obd_data",
+              "displayName": "obd_data",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        1600,
+        1264
+      ],
+      "id": "bf035ada-9e58-4cf8-b8aa-71f4c7957a0a",
+      "name": "chassis_expert1"
+    },
+    {
+      "parameters": {
+        "description": "冷卻與空調系統專家。當診斷涉及引擎冷卻系統、冷卻液、水箱、水泵、節溫器、散熱風扇、水溫異常、引擎過熱、冷卻液洩漏，以及冷氣壓縮機、冷媒、冷凝器、蒸發器、鼓風機、空調控制、冷氣不冷、暖氣異常或相關DTC/PID異常時呼叫此專家。只在問題與冷卻或HVAC空調系統有實際關聯時呼叫。被呼叫後，n8n子工作流會強制先執行SQL車輛歷史資料搜尋，再進行冷卻與空調系統專家分析。",
+        "workflowId": {
+          "__rl": true,
+          "value": "",
+          "mode": "list",
+          "cachedResultName": "powertrain_expert_required_history"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "expert_task": "=={{ $fromAI(\n  'cooling_hvac_expert_task',\n  '交給冷卻與空調系統專家的完整診斷任務。包含冷卻液、水箱、水泵、節溫器、散熱風扇、水溫、過熱、冷卻液洩漏、冷氣壓縮機、冷媒、冷凝器、蒸發器、鼓風機、冷氣與暖氣控制相關問題。',\n  'string'\n) }}",
+            "dtcs": "=={{ $fromAI(\n  'cooling_hvac_dtcs',\n  '本次與引擎冷卻或HVAC空調系統相關的DTC，以逗號分隔；沒有則空字串',\n  'string'\n) }}",
+            "keywords": "=={{ $fromAI(\n  'cooling_hvac_keywords',\n  '提供2至5個與本次冷卻或HVAC空調故障最相關的症狀、零件或故障條件關鍵詞，以逗號分隔',\n  'string'\n) }}",
+            "current_odometer_km": "=={{ String(\n  $('When chat message received').first().json.current_odometer_km\n  ||\n  (\n    (\n      $('When chat message received').first().json.chatInput || ''\n    ).match(/(?:【目前里程公里數】|目前里程公里數|目前公里數|目前里程)\\s*[:：]\\s*([0-9,]+)/)\n    || ['', '']\n  )[1]\n).replace(/,/g,'') }}",
+            "expert_skill": "=={{ $('Tidy Skill').first().json.skills.cooling_hvac_expert }}",
+            "history_skill": "=={{ $('Tidy Skill').first().json.skills.vehicle_history_db_skill }}",
+            "model_id": "=={{ $('取得LM第一個模型').first().json.data[0].id }}",
+            "expert_domain": "cooling_hvac"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "expert_task",
+              "displayName": "expert_task",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "dtcs",
+              "displayName": "dtcs",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "keywords",
+              "displayName": "keywords",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "current_odometer_km",
+              "displayName": "current_odometer_km",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "expert_skill",
+              "displayName": "expert_skill",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "history_skill",
+              "displayName": "history_skill",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "model_id",
+              "displayName": "model_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "expert_domain",
+              "displayName": "expert_domain",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "obd_data",
+              "displayName": "obd_data",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        1744,
+        1264
+      ],
+      "id": "10ecbba5-cfd7-4c82-a4c3-4ca3aa0cd52e",
+      "name": "cooling_hvac_expert1"
+    },
+    {
+      "parameters": {
+        "description": "車輛安全系統專家。當診斷涉及SRS安全氣囊、安全帶預縮器、碰撞感知器、乘員偵測系統、SRS控制模組、安全氣囊警示燈、碰撞相關安全系統、被動安全裝置或相關B碼/DTC異常時呼叫此專家。此專家主要處理與乘員安全、碰撞保護及SRS系統直接相關的問題，不要因一般引擎、電氣、底盤或煞車故障而無條件呼叫。被呼叫後，n8n子工作流會強制先執行SQL車輛歷史資料搜尋，再進行安全系統專家分析。",
+        "workflowId": {
+          "__rl": true,
+          "value": "",
+          "mode": "list",
+          "cachedResultName": "powertrain_expert_required_history"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "expert_task": "=={{ $fromAI(\n  'safety_expert_task',\n  '交給車輛安全系統專家的完整診斷任務。包含SRS安全氣囊、安全帶預縮器、碰撞感知器、乘員偵測、SRS控制模組、安全氣囊警示燈與其他被動安全系統相關問題。',\n  'string'\n) }}",
+            "dtcs": "=={{ $fromAI(\n  'safety_dtcs',\n  '本次與SRS、安全氣囊、安全帶預縮器、乘員偵測或碰撞安全系統相關的DTC或B碼，以逗號分隔；沒有則空字串',\n  'string'\n) }}",
+            "keywords": "=={{ $fromAI(\n  'safety_keywords',\n  '提供2至5個與本次SRS或車輛安全系統故障最相關的症狀、零件或故障條件關鍵詞，以逗號分隔',\n  'string'\n) }}",
+            "current_odometer_km": "=={{ String(\n  $('When chat message received').first().json.current_odometer_km\n  ||\n  (\n    (\n      $('When chat message received').first().json.chatInput || ''\n    ).match(/(?:【目前里程公里數】|目前里程公里數|目前公里數|目前里程)\\s*[:：]\\s*([0-9,]+)/)\n    || ['', '']\n  )[1]\n).replace(/,/g,'') }}",
+            "expert_skill": "=={{ $('Tidy Skill').first().json.skills.safety_expert }}",
+            "history_skill": "=={{ $('Tidy Skill').first().json.skills.vehicle_history_db_skill }}",
+            "model_id": "=={{ $('取得LM第一個模型').first().json.data[0].id }}",
+            "expert_domain": "safety"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "expert_task",
+              "displayName": "expert_task",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "dtcs",
+              "displayName": "dtcs",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "keywords",
+              "displayName": "keywords",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "current_odometer_km",
+              "displayName": "current_odometer_km",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "expert_skill",
+              "displayName": "expert_skill",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "history_skill",
+              "displayName": "history_skill",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "model_id",
+              "displayName": "model_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "expert_domain",
+              "displayName": "expert_domain",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "obd_data",
+              "displayName": "obd_data",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 2.2,
+      "position": [
+        1888,
+        1264
+      ],
+      "id": "14c1aac8-abff-4378-8a37-7d37a53be026",
+      "name": "safety_expert1"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "取得LM第一個模型",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LMStudio Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "diagnostic_supervisor",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "取得LM第一個模型": {
+      "main": [
+        [
+          {
+            "node": "Read Skills",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "diagnostic_supervisor",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "powertrain_expert": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "lmstudio_powertrain": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "powertrain_expert",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "lmstudio_electrical": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "electrical_expert",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "lmstudio_brake": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "brake_expert",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "lmstudio_chassis": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "chassis_expert",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "lmstudio_cooling_hvac": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "cooling_hvac_expert",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "lmstudio_safety": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "safety_expert",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "electrical_expert": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "brake_expert": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "chassis_expert": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "cooling_hvac_expert": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "safety_expert": {
+      "ai_tool": [
+        []
+      ]
+    },
+    "get_obd_data": {
+      "ai_tool": [
+        [
+          {
+            "node": "diagnostic_supervisor",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "diagnostic_supervisor": {
+      "main": [
+        [
+          {
+            "node": "儲存診斷報告到網站",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "update_diagnosis_progress": {
+      "ai_tool": [
+        [
+          {
+            "node": "diagnostic_supervisor",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Skills": {
+      "main": [
+        [
+          {
+            "node": "Tidy Skill",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tidy Skill": {
+      "main": [
+        [
+          {
+            "node": "diagnostic_supervisor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "vehicle_history_search": {
+      "ai_tool": [
+        [
+          {
+            "node": "powertrain_expert",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "electrical_expert",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "brake_expert",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "chassis_expert",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "cooling_hvac_expert",
+            "type": "ai_tool",
+            "index": 0
+          },
+          {
+            "node": "safety_expert",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "powertrain_expert1": {
+      "ai_tool": [
+        [
+          {
+            "node": "diagnostic_supervisor",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "electrical_expert1": {
+      "ai_tool": [
+        [
+          {
+            "node": "diagnostic_supervisor",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "brake_expert1": {
+      "ai_tool": [
+        [
+          {
+            "node": "diagnostic_supervisor",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "chassis_expert1": {
+      "ai_tool": [
+        [
+          {
+            "node": "diagnostic_supervisor",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cooling_hvac_expert1": {
+      "ai_tool": [
+        [
+          {
+            "node": "diagnostic_supervisor",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "safety_expert1": {
+      "ai_tool": [
+        [
+          {
+            "node": "diagnostic_supervisor",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "8cb08cb4-756f-4313-be19-1d9726137513",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "f22a866b9580dd4591b279ea90dbce6e9e0aaf0a5fba4f0469669b28cde723f6"
+  },
+  "id": "iD0iv7BjmpAMHePh",
+  "tags": []
+}

@@ -1,0 +1,14 @@
+[Unit]
+Description=VE Diagnostics ve-web.service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/agentic-ai-vehicle-diagnostics
+EnvironmentFile=/opt/agentic-ai-vehicle-diagnostics/.env
+ExecStart=/opt/agentic-ai-vehicle-diagnostics/.venv/bin/python /opt/agentic-ai-vehicle-diagnostics/app/web/ve_web_v6_workorder.py 
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

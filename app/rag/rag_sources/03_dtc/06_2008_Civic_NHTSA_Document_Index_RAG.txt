@@ -1,0 +1,959 @@
+2008 Honda Civic 家族 NHTSA 公開製造商通報索引
+
+用途：提供文件 ID 與車型變體的搜尋入口；為避免大批重製原摘要，本檔不收錄完整摘要。
+CIVIC、CIVIC GX、CIVIC HYBRID、CIVIC SI 必須分開判讀。資料列無 DTC 字串不表示文件沒有診斷價值。
+不重複資料列索引數：106
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10024034
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2005-2009
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10024631
+nhtsa_model_field: CIVIC
+model_year_field: 2007,2008
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2005-2009
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10024970
+nhtsa_model_field: CIVIC
+model_year_field: 2007,2008
+dtc_strings_in_public_summary: P0456
+source_dataset_period: 2005-2009
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10025523
+nhtsa_model_field: CIVIC
+model_year_field: 2000,2001,2002,2003,2004,2005,2006,2007,2008
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2005-2009
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10026087
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2005-2009
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10026824
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2005-2009
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10026884
+nhtsa_model_field: CIVIC
+model_year_field: 2003,2004,2005,2006,2007,2008,2009
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2005-2009
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10026904
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2005-2009
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10030874
+nhtsa_model_field: CIVIC
+model_year_field: 2008,2009
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2005-2009
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10030876
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2005-2009
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10033127
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2010-2014
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10034885
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2010-2014
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10035744
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2010-2014
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10037712
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2010-2014
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10038365
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2010-2014
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10039365
+nhtsa_model_field: CIVIC
+model_year_field: 2008
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2010-2014
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10039384
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2010-2014
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10039531
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2010-2014
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10040464
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2010-2014
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10040484
+nhtsa_model_field: CIVIC
+model_year_field: 2003,2004,2005,2006,2007,2008
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2010-2014
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10040487
+nhtsa_model_field: CIVIC
+model_year_field: 2003,2004,2005,2006,2007,2008,2009
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2010-2014
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10040494
+nhtsa_model_field: CIVIC
+model_year_field: 1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2010-2014
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10043248
+nhtsa_model_field: CIVIC
+model_year_field: 2005,2006,2007,2008,2009,2010,2011,2012
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2010-2014
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10043607
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010,2011,2012
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2010-2014
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10045681
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2010-2014
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10051794
+nhtsa_model_field: CIVIC
+model_year_field: 1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2010-2014
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10052468
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010,2011,2012
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2010-2014
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10052477
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010,2011,2012,2013
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2010-2014
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10054346
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010,2011,2012,2013
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2010-2014
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10056874
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10056880
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10057046
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10058371
+nhtsa_model_field: CIVIC
+model_year_field: 2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10086288
+nhtsa_model_field: CIVIC
+model_year_field: 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10086291
+nhtsa_model_field: CIVIC
+model_year_field: 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10086302
+nhtsa_model_field: CIVIC
+model_year_field: 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10086306
+nhtsa_model_field: CIVIC
+model_year_field: 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10086308
+nhtsa_model_field: CIVIC
+model_year_field: 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10086381
+nhtsa_model_field: CIVIC
+model_year_field: 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10086563
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10086662
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10086663
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10086823
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10086881
+nhtsa_model_field: CIVIC
+model_year_field: 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10086887
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10099946
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008
+dtc_strings_in_public_summary: P0606
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10100421
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010,2011,2012,2013
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10107355
+nhtsa_model_field: CIVIC
+model_year_field: 2003,2004,2005,2006,2007,2008
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10108021
+nhtsa_model_field: CIVIC
+model_year_field: 1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10108038
+nhtsa_model_field: CIVIC
+model_year_field: 1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10108113
+nhtsa_model_field: CIVIC
+model_year_field: 1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10108204
+nhtsa_model_field: CIVIC
+model_year_field: 1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10108481
+nhtsa_model_field: CIVIC
+model_year_field: 1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10108873
+nhtsa_model_field: CIVIC
+model_year_field: 2008
+dtc_strings_in_public_summary: P0300, P0304
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10115157
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10115201
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10115219
+nhtsa_model_field: CIVIC
+model_year_field: 2008,2009,2010,2011,2012,2013,2014,2015
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10115799
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10115839
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10118211
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10118515
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10124255
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10124263
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010,2011,2012,2013
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10124264
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10128531
+nhtsa_model_field: CIVIC
+model_year_field: 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10128559
+nhtsa_model_field: CIVIC
+model_year_field: 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10141170
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10141175
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10145895
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10159786
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10172570
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2020-2024
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10206994
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2020-2024
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10237952
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2020-2024
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 11028517
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2025-2026
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 11034201
+nhtsa_model_field: CIVIC
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2025-2026
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10099946
+nhtsa_model_field: CIVIC GX
+model_year_field: 2006,2007,2008
+dtc_strings_in_public_summary: P0606
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10108719
+nhtsa_model_field: CIVIC GX
+model_year_field: 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10128531
+nhtsa_model_field: CIVIC GX
+model_year_field: 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10128559
+nhtsa_model_field: CIVIC GX
+model_year_field: 2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10145895
+nhtsa_model_field: CIVIC GX
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10159786
+nhtsa_model_field: CIVIC GX
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10172580
+nhtsa_model_field: CIVIC GX
+model_year_field: 1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2020-2024
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10172581
+nhtsa_model_field: CIVIC GX
+model_year_field: 1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2020-2024
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10043248
+nhtsa_model_field: CIVIC HYBRID
+model_year_field: 2005,2006,2007,2008,2009
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2010-2014
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10045879
+nhtsa_model_field: CIVIC HYBRID
+model_year_field: 2003,2004,2005,2006,2007,2008,2009
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2010-2014
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10051509
+nhtsa_model_field: CIVIC HYBRID
+model_year_field: 2003,2004,2005,2006,2007,2008
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2010-2014
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10052477
+nhtsa_model_field: CIVIC HYBRID
+model_year_field: 2006,2007,2008,2009,2010,2011,2012
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2010-2014
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10052495
+nhtsa_model_field: CIVIC HYBRID
+model_year_field: 2006,2007,2008
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2010-2014
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10086563
+nhtsa_model_field: CIVIC HYBRID
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10086887
+nhtsa_model_field: CIVIC HYBRID
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10099946
+nhtsa_model_field: CIVIC HYBRID
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: P0606
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10100421
+nhtsa_model_field: CIVIC HYBRID
+model_year_field: 2006,2007,2008,2009,2010,2011,2012,2013
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10115219
+nhtsa_model_field: CIVIC HYBRID
+model_year_field: 2008,2009,2010,2011,2012,2013,2014,2015
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10124264
+nhtsa_model_field: CIVIC HYBRID
+model_year_field: 2006,2007,2008
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10128531
+nhtsa_model_field: CIVIC HYBRID
+model_year_field: 2003,2004,2005,2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10128559
+nhtsa_model_field: CIVIC HYBRID
+model_year_field: 2003,2004,2005,2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10129527
+nhtsa_model_field: CIVIC HYBRID
+model_year_field: 2006,2007,2008
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10129551
+nhtsa_model_field: CIVIC HYBRID
+model_year_field: 2006,2007,2008
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10142649
+nhtsa_model_field: CIVIC HYBRID
+model_year_field: 2003,2004,2005,2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10145895
+nhtsa_model_field: CIVIC HYBRID
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10159786
+nhtsa_model_field: CIVIC HYBRID
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10172570
+nhtsa_model_field: CIVIC HYBRID
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2020-2024
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10206994
+nhtsa_model_field: CIVIC HYBRID
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2020-2024
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10237952
+nhtsa_model_field: CIVIC HYBRID
+model_year_field: 2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2020-2024
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10128531
+nhtsa_model_field: CIVIC SI
+model_year_field: 2002,2003,2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]
+
+[NHTSA_DOCUMENT_INDEX]
+nhtsa_document_id: 10128559
+nhtsa_model_field: CIVIC SI
+model_year_field: 2002,2003,2006,2007,2008,2009,2010,2011
+dtc_strings_in_public_summary: NONE
+source_dataset_period: 2015-2019
+applicability_rule: 先核對 VIN、引擎／燃料型式、車型變體及原始文件，不得只看 CIVIC 字樣就套用。
+[/NHTSA_DOCUMENT_INDEX]

@@ -1,0 +1,14 @@
+[Unit]
+Description=VE Diagnostics ve-history-api.service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/agentic-ai-vehicle-diagnostics
+EnvironmentFile=/opt/agentic-ai-vehicle-diagnostics/.env
+ExecStart=/opt/agentic-ai-vehicle-diagnostics/.venv/bin/python /opt/agentic-ai-vehicle-diagnostics/app/history/vehicle_history_api.py 
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
